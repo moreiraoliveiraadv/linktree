@@ -34,6 +34,10 @@ Sem Supabase configurado, o formulário usa o Netlify Forms.
 
 ## Hospedagem
 
-Feito para o **Netlify**: o formulário de nome e e-mail usa o Netlify Forms (`ebook-vdma`).
-Conecte este repositório no Netlify (Add new project → Import from GitHub), sem comando de build e com a pasta de publicação na raiz.
-Depois ative **Forms → Enable form detection**.
+Site estático, sem comando de build: publique a raiz do repositório.
+
+- **Vercel**: Add New › Project › importe este repositório › Deploy. O `vercel.json` já manda `/` para `/links/`.
+- **Netlify**: Add new project › Import from GitHub. O `_redirects` faz o mesmo.
+
+Depois, ligue o domínio `moreiraoliveira.adv.br` no painel da hospedagem e crie no Registro.br os registros que ela indicar
+(sem mexer nos registros MX do Google, que são do e-mail).
