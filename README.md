@@ -19,7 +19,18 @@ No fim de `links/index.html`, no bloco `PERFIL`:
 - `email`, `assuntoEmail`: e-mail e assunto
 - `site`: site institucional
 - `pdf`: material para download
-- `umamiId`: ID do contador de cliques (cloud.umami.is)
+- `supabaseUrl`, `supabaseKey`: projeto Supabase e chave pública (anon/publishable)
+- `umamiId`: contador de cliques extra, opcional (cloud.umami.is)
+
+## Supabase (nomes, e-mails e cliques)
+
+1. No Supabase, abra **SQL Editor**, cole `supabase/schema.sql` e rode.
+2. Em **Project Settings › API**, copie a URL do projeto e a chave pública para o bloco `PERFIL`.
+3. Pronto: os contatos vão para a tabela `leads` e os cliques para `cliques`.
+   Relatórios prontos: `leads_unicos`, `resumo_cliques`, `cliques_por_dia`.
+
+A página só consegue **inserir**; ninguém lê os dados por ela.
+Sem Supabase configurado, o formulário usa o Netlify Forms.
 
 ## Hospedagem
 

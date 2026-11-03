@@ -453,7 +453,11 @@
     assuntoEmail: "Contato pelo linktree",
     site: "https://www.marcoantoniooliveira.adv.br/",
     pdf: "assets/reforma-tributaria-vdma.pdf",
-    // Contador de cliques (Umami). Cole aqui o "Website ID" criado em cloud.umami.is
+    // Supabase (Project Settings › API): URL do projeto e chave pública (anon ou publishable).
+    // Com os dois preenchidos, nomes, e-mails e cliques vão para o Supabase.
+    supabaseUrl: "",
+    supabaseKey: "",
+    // Contador de cliques extra (opcional): "Website ID" do cloud.umami.is
     umamiId: "",
   };
 
@@ -465,7 +469,37 @@
     s.dataset.websiteId = PERFIL.umamiId;
     document.head.append(s);
   }
-  const track = (evento) => { try { window.umami?.track(evento); } catch {} };
+  const dispositivo = matchMedia("(pointer: coarse)").matches ? "celular" : "computador";
+
+  /* ---------- Supabase: só insere (a página não lê nada) ---------- */
+  const supabaseAtivo = !!(PERFIL.supabaseUrl && PERFIL.supabaseKey);
+  function supabaseInsert(tabela, dados) {
+    const headers = {
+      "Content-Type": "application/json",
+      apikey: PERFIL.supabaseKey,
+      Prefer: "return=minimal",
+    };
+    // chave antiga (JWT) também vai no Authorization; a nova "publishable" não
+    if (PERFIL.supabaseKey.startsWith("eyJ")) headers.Authorization = `Bearer ${PERFIL.supabaseKey}`;
+    return fetch(`${PERFIL.supabaseUrl.replace(/\/$/, "")}/rest/v1/${tabela}`, {
+      method: "POST", headers, body: JSON.stringify(dados), keepalive: true,
+    });
+  }
+  function registrar(evento) {
+    if (!supabaseAtivo) return;
+    supabaseInsert("cliques", {
+      evento, dispositivo,
+      pagina: location.pathname,
+      origem: document.referrer ? new URL(document.referrer).hostname : null,
+    }).catch(() => {});
+  }
+  // Cada elemento com data-umami-event vira um clique registrado
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest("[data-umami-event]");
+    if (el) registrar(el.dataset.umamiEvent);
+  }, true);
+  registrar("visita");
+  const track = (evento) => { registrar(evento); try { window.umami?.track(evento); } catch {} };
 
   /* ---------- Liga os links ---------- */
   const hrefs = {
@@ -542,7 +576,11 @@
     submitBtn.disabled = true;
     try {
       const local = ["localhost", "127.0.0.1"].includes(location.hostname);
-      if (!local) {
+      if (supabaseAtivo) {
+        const res = await supabaseInsert("leads", { nome, email, material: "reforma-tributaria-vdma", pagina: location.pathname, dispositivo });
+        if (!res.ok) throw new Error(res.status);
+      } else if (!local) {
+        // Sem Supabase: usa o Netlify Forms
         const res = await fetch(location.pathname, {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
