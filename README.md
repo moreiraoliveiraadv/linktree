@@ -1,14 +1,18 @@
 # Linktree · Moreira · Oliveira Advocacia
 
-Página de links do escritório, publicada em **moreiraoliveira.adv.br/links**.
+Site do escritório em **moreiraoliveira.adv.br**:
+
+- `/` página provisória: logomarca e botão de contato pelo WhatsApp
+- `/links/` página de links
 
 ## Estrutura
 
 ```
+index.html                           página provisória da raiz (logo + WhatsApp, arquivo único)
 links/
   index.html                         página (HTML, CSS e JS num arquivo só)
   assets/                            logo, monograma, trama, capa e PDF do material VDMA
-_redirects                           moreiraoliveira.adv.br → /links/ (Netlify)
+_redirects                           /links → /links/ (Netlify)
 ```
 
 ## Editar links e contatos
@@ -36,8 +40,10 @@ Sem Supabase configurado, o formulário usa o Netlify Forms.
 
 Site estático, sem comando de build: publique a raiz do repositório.
 
-- **Vercel**: Add New › Project › importe este repositório › Deploy. O `vercel.json` já manda `/` para `/links/`.
+- **Vercel**: Add New › Project › importe este repositório › Deploy. O `vercel.json` só acrescenta a barra final (`/links` → `/links/`).
 - **Netlify**: Add new project › Import from GitHub. O `_redirects` faz o mesmo.
+
+A página provisória da raiz é o `index.html`. Para trocar o número do WhatsApp, edite o link `wa.me` no botão.
 
 Depois, ligue o domínio `moreiraoliveira.adv.br` no painel da hospedagem e crie no Registro.br os registros que ela indicar
 (sem mexer nos registros MX do Google, que são do e-mail).
