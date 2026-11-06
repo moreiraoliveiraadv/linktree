@@ -9,6 +9,8 @@ Site do escritório em **moreiraoliveira.adv.br**:
 
 ```
 index.html                           página provisória da raiz (logo + WhatsApp, arquivo único)
+favicon.ico, icon-192.png, ...      ícones do site (múltiplos de 48 px, exigência do Google)
+robots.txt, sitemap.xml              orientação para buscadores
 links/
   index.html                         página (HTML, CSS e JS num arquivo só)
   assets/                            logo, monograma, trama, capa e PDF do material VDMA
