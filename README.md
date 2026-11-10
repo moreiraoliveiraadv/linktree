@@ -4,6 +4,7 @@ Site do escritório em **moreiraoliveira.adv.br**:
 
 - `/` página provisória: logomarca e botão de contato pelo WhatsApp
 - `/links/` página de links
+- `/privacidade/` Política de Privacidade
 
 ## Estrutura
 
@@ -11,6 +12,8 @@ Site do escritório em **moreiraoliveira.adv.br**:
 index.html                           página provisória da raiz (logo + WhatsApp, arquivo único)
 favicon.ico, icon-192.png, ...      ícones do site (múltiplos de 48 px, exigência do Google)
 robots.txt, sitemap.xml              orientação para buscadores
+privacidade/
+  index.html                         Política de Privacidade (LGPD)
 links/
   index.html                         página (HTML, CSS e JS num arquivo só)
   assets/                            logo, monograma, trama, capa e PDF do material VDMA

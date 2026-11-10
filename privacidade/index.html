@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidade | Moreira · Oliveira Advocacia</title>
+<meta name="description" content="Política de Privacidade da Moreira · Oliveira Advocacia, nos termos da Lei nº 13.709/2018 (LGPD).">
+<link rel="canonical" href="https://www.moreiraoliveira.adv.br/privacidade/">
+<meta name="theme-color" content="#F5F4F0">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --marinho: #1C2B3A;
+    --paranoa: #4D6273;
+    --grafite: #6B6F72;
+    --nevoa: #D5DADD;
+    --papel: #F5F4F0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--papel);
+    color: var(--marinho);
+    font-family: "Jost", system-ui, sans-serif;
+    font-size: 15.5px; line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--paranoa); }
+
+  /* Barra com o botão Fechar, sempre visível */
+  .barra {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; justify-content: flex-end;
+    padding: 12px 16px;
+    background: var(--papel);
+    border-bottom: 1px solid var(--nevoa);
+  }
+  .fechar {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 9px 16px;
+    border: 1px solid var(--marinho); background: transparent; color: var(--marinho);
+    font: 500 11.5px/1 "Jost", system-ui, sans-serif; letter-spacing: .22em; text-transform: uppercase;
+    cursor: pointer;
+  }
+  .fechar:hover { background: var(--marinho); color: var(--papel); }
+  .fechar svg { width: 12px; height: 12px; }
+
+  .documento { max-width: 720px; margin: 0 auto; padding: 48px 24px 72px; }
+
+  /* Logomarca (proporções do manual: C = corpo da palavra-marca) */
+  .logo {
+    --C: clamp(19px, 5.2vw, 30px);
+    display: flex; flex-direction: column; align-items: center;
+    width: max-content; margin: 0 auto; text-decoration: none; color: var(--marinho);
+  }
+  .logo:hover { color: var(--marinho); }
+  .logo__linha {
+    display: flex; align-items: center; gap: calc(var(--C) * .35);
+    font-family: "Bodoni Moda", Didot, serif; font-optical-sizing: none;
+    font-variation-settings: "opsz" 8; font-weight: 500;
+    font-size: var(--C); line-height: 1; letter-spacing: .08em; white-space: nowrap;
+  }
+  .logo__linha span:last-child { margin-right: -.08em; }
+  .selo {
+    flex: none; position: relative;
+    width: calc(var(--C) * .85); height: calc(var(--C) * .85);
+    border-radius: 50%; background: var(--marinho); transform: translateY(-.04em);
+  }
+  .selo::after {
+    content: ""; position: absolute; inset: 0; margin: auto; height: 65%; aspect-ratio: 687 / 900;
+    background: var(--papel);
+    -webkit-mask: url("/links/assets/monograma.png") center / contain no-repeat;
+            mask: url("/links/assets/monograma.png") center / contain no-repeat;
+  }
+  .logo__advocacia {
+    margin-top: calc(var(--C) * .4); margin-right: -.5em;
+    font-size: calc(var(--C) * .5); line-height: 1; letter-spacing: .5em; color: var(--paranoa);
+  }
+
+  h1 {
+    margin-top: 56px; text-align: center;
+    font-family: "Bodoni Moda", Didot, serif; font-optical-sizing: none;
+    font-variation-settings: "opsz" 8; font-weight: 500;
+    font-size: clamp(24px, 5vw, 32px); line-height: 1.25;
+  }
+  .data { margin-top: 12px; text-align: center; font-size: 13px; letter-spacing: .04em; color: var(--grafite); }
+
+  h2 {
+    margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--nevoa);
+    font-size: 12.5px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
+  }
+  p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+  p { margin-top: 12px; }
+  strong { font-weight: 500; }
+  .nb { white-space: nowrap; }
+  .num { font-weight: 500; }
+
+  .rodape { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--nevoa); text-align: center; }
+  .rodape p { text-align: center; hyphens: manual; font-size: 13px; color: var(--grafite); }
+  .rodape p + p { margin-top: 4px; }
+  .rodape .fechar { margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="barra">
+  <button type="button" class="fechar" data-fechar>
+    Fechar
+    <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M1 1l10 10M11 1 1 11"/></svg>
+  </button>
+</div>
+
+<main class="documento">
+
+  <a class="logo" href="/" aria-label="Moreira · Oliveira Advocacia, página inicial">
+    <span class="logo__linha" aria-hidden="true"><span>MOREIRA</span><span class="selo"></span><span>OLIVEIRA</span></span>
+    <span class="logo__advocacia" aria-hidden="true">ADVOCACIA</span>
+  </a>
+
+  <h1>Política de Privacidade</h1>
+  <p class="data">Última atualização: 10 de novembro de 2026</p>
+
+  <h2>1. Do controlador</h2>
+  <p><span class="num">1.1.</span> A presente Política de Privacidade (“Política”) informa as práticas adotadas por <strong>M. MOREIRA DE OLIVEIRA SOCIEDADE INDIVIDUAL DE ADVOCACIA</strong>, inscrita no CNPJ sob o nº&nbsp;<span class="nb">69.736.291/</span><wbr><span class="nb">0001-87</span> (“Escritório”), no tratamento de dados pessoais dos usuários do site www.moreiraoliveira.adv.br (“Site”), nos termos da Lei nº 13.709/2018 (“LGPD”).</p>
+
+  <h2>2. Dos dados coletados</h2>
+  <p><span class="num">2.1.</span> O Escritório coleta o nome e o endereço de correio eletrônico informados pelo titular ao solicitar materiais disponibilizados no Site, bem como registros de navegação não associados à sua identidade.</p>
+
+  <h2>3. Das finalidades</h2>
+  <p><span class="num">3.1.</span> Os dados são utilizados para disponibilizar o material solicitado e para contato relacionado ao seu conteúdo, com fundamento no consentimento do titular, e para fins estatísticos, com fundamento no legítimo interesse do Escritório.</p>
+
+  <h2>4. Do compartilhamento</h2>
+  <p><span class="num">4.1.</span> Os dados pessoais poderão ser compartilhados com prestadores de serviços contratados para viabilizar o funcionamento do Site, tais como serviços de hospedagem, de armazenamento em nuvem e de fornecimento de fontes tipográficas, os quais realizam o tratamento exclusivamente conforme as instruções do Escritório. Os dados não são comercializados.</p>
+
+  <h2>5. Da conservação</h2>
+  <p><span class="num">5.1.</span> Os dados serão conservados pelo período necessário ao atendimento das finalidades indicadas ou até a revogação do consentimento.</p>
+
+  <h2>6. Dos direitos do titular</h2>
+  <p><span class="num">6.1.</span> O titular poderá, a qualquer tempo, exercer os direitos previstos no art. 18 da LGPD, inclusive os de acesso, correção, eliminação e revogação do consentimento, mediante solicitação ao endereço eletrônico <a href="mailto:contato@moreiraoliveira.adv.br">contato@moreiraoliveira.adv.br</a>.</p>
+
+  <h2>7. Das alterações</h2>
+  <p><span class="num">7.1.</span> Esta Política poderá ser atualizada a qualquer tempo, e a versão vigente estará sempre disponível nesta página.</p>
+
+  <div class="rodape">
+    <p>M. Moreira de Oliveira Sociedade Individual de Advocacia</p>
+    <p>CNPJ <span class="nb">69.736.291/0001-87</span></p>
+    <button type="button" class="fechar" data-fechar>
+      Fechar
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M1 1l10 10M11 1 1 11"/></svg>
+    </button>
+  </div>
+
+</main>
+
+<script>
+  /* Fechar: volta para a página anterior do site; se a política foi aberta numa aba nova, fecha a aba;
+     se nada disso for possível (ex.: acesso direto pelo endereço), leva para a página de links. */
+  document.querySelectorAll("[data-fechar]").forEach((btn) => btn.addEventListener("click", () => {
+    let veioDoSite = false;
+    try { veioDoSite = document.referrer && new URL(document.referrer).origin === location.origin; } catch {}
+    if (veioDoSite && history.length > 1) { history.back(); return; }
+    window.close();
+    setTimeout(() => { location.href = "/links/"; }, 150);
+  }));
+</script>
+</body>
+</html>

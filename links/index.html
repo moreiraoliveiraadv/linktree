@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Moreira · Oliveira Advocacia</title>
-<meta name="description" content="Moreira · Oliveira Advocacia — consultoria tributária e empresarial em Brasília/DF. Fale conosco e acesse nossos materiais.">
+<meta name="description" content="Moreira · Oliveira Advocacia · consultoria tributária e empresarial em Brasília/DF. Fale conosco e acesse nossos materiais.">
 <meta name="theme-color" content="#1C2B3A">
 <link rel="canonical" href="https://www.moreiraoliveira.adv.br/links/">
 
@@ -41,11 +41,11 @@
     --titulo-peso: 600;
     --titulo-opsz: "opsz" 8;   /* menor = traços finos mais grossos */
 
-    /* Cantos: a IDV pede cantos retos. Para seguir à risca, troque para 2px. */
-    --radius: 18px;
-    --glass-bg: rgba(245, 244, 240, 0.055);
-    --glass-bg-hover: rgba(245, 244, 240, 0.09);
-    --glass-line: rgba(213, 218, 221, 0.20);
+    /* Superfícies chapadas e cantos retos, como pede a identidade visual */
+    --superficie: #22344A;
+    --superficie-hover: #283C52;
+    --linha: #364A5E;
+    --linha-forte: #52677A;
     --ease: cubic-bezier(.2, .7, .1, 1);
   }
 
@@ -65,69 +65,17 @@
   button { background: none; border: 0; cursor: pointer; }
   :focus-visible { outline: 1px solid var(--nevoa); outline-offset: 3px; }
 
-  /* ---------- Fundo: trama monogramática + luz difusa ---------- */
-  .backdrop { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-  .backdrop .trama {
-    position: absolute; inset: -4%;
-    background: url("assets/trama.webp") center / 540px auto repeat;
-    opacity: .55;
-  }
-  .backdrop .glow { position: absolute; border-radius: 50%; filter: blur(60px); will-change: transform; }
-  .glow.g1 { width: 70vmax; height: 70vmax; left: -30vmax; top: 30vh; background: radial-gradient(circle, rgba(77,98,115,.75), transparent 65%); animation: drift1 22s ease-in-out infinite alternate; }
-  .glow.g2 { width: 60vmax; height: 60vmax; right: -28vmax; top: 62vh; background: radial-gradient(circle, rgba(139,143,145,.35), transparent 65%); animation: drift2 26s ease-in-out infinite alternate; }
-  @keyframes drift1 { to { transform: translate(14vmax, -10vh) scale(1.1); } }
-  @keyframes drift2 { to { transform: translate(-12vmax, -14vh) scale(.92); } }
-
   /* ---------- Página ---------- */
+  /* Tudo cabe numa tela de celular, sem rolagem; em telas altas o bloco fica centralizado */
   .page {
     position: relative; z-index: 1;
-    width: 100%; max-width: 460px; margin: 0 auto;
-    padding: 0 16px calc(28px + env(safe-area-inset-bottom));
+    width: 100%; max-width: 460px; min-height: 100vh; min-height: 100svh; margin: 0 auto;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: calc(22px + env(safe-area-inset-top)) 16px calc(14px + env(safe-area-inset-bottom));
   }
-
-  /* Topo: botões de vidro */
-  .topbar {
-    position: absolute; z-index: 3; left: 16px; right: 16px;
-    top: calc(14px + env(safe-area-inset-top));
-    display: flex; justify-content: space-between;
-  }
-  .icon-btn {
-    width: 44px; height: 44px; border-radius: 50%;
-    display: grid; place-items: center;
-    background: rgba(28, 43, 58, .35);
-    border: .5px solid var(--glass-line);
-    backdrop-filter: blur(16px) saturate(140%);
-    -webkit-backdrop-filter: blur(16px) saturate(140%);
-    transition: background .3s var(--ease), transform .2s var(--ease);
-  }
-  .icon-btn:hover { background: rgba(77, 98, 115, .45); }
-  .icon-btn:active { transform: scale(.94); }
-  .icon-btn svg { width: 20px; height: 20px; }
-
-  /* Hero: monograma em arco */
-  .hero {
-    position: relative;
-    height: min(31svh, 320px); min-height: 220px;
-    margin: 0 -16px;
-    overflow: hidden;
-    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-            mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-  }
-  .hero .arch {
-    position: absolute;
-    height: 150%; aspect-ratio: 746 / 978;
-    left: 50%; top: 8%;
-    background: var(--paranoa);
-    -webkit-mask: url("assets/monograma.png") center / contain no-repeat;
-            mask: url("assets/monograma.png") center / contain no-repeat;
-    opacity: .62;
-    transform: translate(-50%, calc(var(--scroll, 0) * .35px));
-    animation: rise 1.6s var(--ease) both;
-  }
-  @keyframes rise { from { opacity: 0; translate: 0 6%; } }
 
   /* Identidade */
-  .identity { position: relative; margin-top: -92px; text-align: center; z-index: 2; }
+  .identity { position: relative; text-align: center; }
   .wordmark {
     display: block; width: min(80vw, 330px); aspect-ratio: 663 / 95; margin: 0 auto;
     background: var(--papel);
@@ -135,115 +83,68 @@
             mask: url("assets/logo.png") center / contain no-repeat;
   }
   .descriptor {
-    margin-top: 16px;
+    margin-top: 12px;
     font-size: 10.5px; font-weight: 500; letter-spacing: .26em; text-transform: uppercase;
     color: var(--concreto);
   }
-  .filete { width: 40px; height: .5px; background: var(--nevoa); opacity: .5; margin: 18px auto 20px; }
+  .filete { width: 40px; height: .5px; background: var(--nevoa); opacity: .5; margin: 14px auto 16px; }
 
-  /* ---------- Vidro ---------- */
-  .glass {
-    position: relative; isolation: isolate; overflow: hidden;
-    border-radius: var(--radius);
-    background: var(--glass-bg);
-    border: .5px solid var(--glass-line);
-    box-shadow: inset 0 1px 0 rgba(245, 244, 240, .08);
-    backdrop-filter: blur(22px) saturate(150%);
-    -webkit-backdrop-filter: blur(22px) saturate(150%);
-    transition: background .35s var(--ease), border-color .35s var(--ease), transform .25s var(--ease);
+  /* ---------- Cartões ---------- */
+  .card {
+    position: relative; display: block;
+    background: var(--superficie);
+    border: 1px solid var(--linha);
+    transition: border-color .2s, background-color .2s;
   }
-  /* Luz que segue o dedo/cursor */
-  .glass::before {
-    content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-    background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 0%), rgba(245, 244, 240, .14), transparent 60%);
-    opacity: 0; transition: opacity .4s var(--ease);
-  }
-  .glass:hover, .glass.is-pressed { background: var(--glass-bg-hover); border-color: rgba(213, 218, 221, .34); }
-  .glass:hover::before, .glass.is-pressed::before { opacity: 1; }
-  .glass:active { transform: scale(.985); }
+  .card:hover { border-color: var(--linha-forte); background: var(--superficie-hover); }
 
-  /* Grade */
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .span-2 { grid-column: 1 / -1; }
+  .lista { display: grid; gap: 8px; }
 
   /* Card do e-book */
-  .feature { display: block; padding: 8px; }
-  .feature figure { position: relative; border-radius: calc(var(--radius) - 8px); overflow: hidden; aspect-ratio: 16 / 9.6; background: var(--marinho); }
-  .feature img { width: 100%; height: 100%; object-fit: cover; object-position: center 32%; display: block; transition: transform 1.2s var(--ease); }
-  .feature:hover img { transform: scale(1.03); }
+  .feature { padding: 8px; }
+  .feature figure { position: relative; overflow: hidden; height: clamp(130px, calc(100svh - 470px), 232px); background: var(--marinho); }
+  .feature img { width: 100%; height: 100%; object-fit: cover; object-position: center 32%; display: block; }
   .badge {
     position: absolute; top: 10px; right: 10px;
     width: 38px; height: 38px; border-radius: 50%;
     display: grid; place-items: center;
-    background: rgba(28, 43, 58, .45); border: .5px solid var(--glass-line);
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    transition: background .3s var(--ease), color .3s var(--ease), transform .3s var(--ease);
+    background: var(--marinho); border: 1px solid var(--linha-forte);
   }
   .badge svg { width: 17px; height: 17px; }
-  .feature:hover .badge { background: var(--papel); color: var(--marinho); transform: translateY(2px); }
-  .cta { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px 8px 4px 8px; text-align: center; }
+  .cta { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 9px 8px 2px; text-align: center; }
   .kicker { font-family: var(--serif-display); font-size: 16px; font-weight: var(--titulo-peso); font-variation-settings: var(--titulo-opsz); color: var(--papel); letter-spacing: .005em; }
   .kicker .sep { color: var(--grafite); margin: 0 .25em; }
   .cta-text { font-size: 10.5px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--nevoa); }
 
-  /* Botões compactos */
-  .tile {
-    min-height: 64px; padding: 12px 12px 12px 14px;
-    display: flex; align-items: center; gap: 10px; text-align: left;
+  /* Linhas de contato */
+  .linha {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+    padding: 14px 16px;
   }
-  .ico { flex: none; width: 24px; height: 24px; color: var(--papel); }
-  .ico svg { width: 100%; height: 100%; }
-  .ico svg[fill="currentColor"] { padding: 1px; }
-  .label { flex: 1; min-width: 0; font-size: 15px; line-height: 1.25; font-weight: 400; color: var(--papel); }
-  .label small { display: block; margin-top: 2px; font-size: 11.5px; color: var(--concreto); letter-spacing: .01em; white-space: nowrap; }
-  .corner { flex: none; width: 14px; height: 14px; opacity: .45; transition: opacity .3s, transform .3s var(--ease); }
-  .tile:hover .corner { opacity: 1; transform: translate(2px, -2px); }
+  .linha .label { font-size: 15px; color: var(--papel); }
+  .linha small { font-size: 12px; color: var(--concreto); letter-spacing: .01em; text-align: right; }
 
-  footer { margin-top: 22px; text-align: center; color: var(--concreto); }
+  footer { margin-top: 16px; text-align: center; color: var(--concreto); }
   footer p { font-size: 9.5px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; }
   footer p + p { margin-top: 7px; letter-spacing: .18em; opacity: .7; }
-
-  /* Botão fixo de WhatsApp */
-  .fab {
-    position: fixed; z-index: 20;
-    right: max(16px, env(safe-area-inset-right));
-    bottom: calc(18px + env(safe-area-inset-bottom));
-    width: 54px; height: 54px; border-radius: 50%;
-    display: grid; place-items: center;
-    background: var(--papel); color: var(--marinho);
-    box-shadow: 0 10px 30px rgba(10, 18, 26, .35);
-    transition: transform .25s var(--ease);
-  }
-  .fab svg { width: 27px; height: 27px; }
-  .fab:hover { transform: scale(1.05); }
-  .fab:active { transform: scale(.94); }
-  .fab::after {
-    content: ""; position: absolute; inset: 0; border-radius: 50%;
-    border: 1px solid var(--papel); opacity: 0;
-    animation: ping 3.2s var(--ease) 2s infinite;
-  }
-  @keyframes ping { 0% { transform: scale(1); opacity: .6; } 70%, 100% { transform: scale(1.6); opacity: 0; } }
-
-  /* ---------- Entrada escalonada ---------- */
-  .reveal { opacity: 0; transform: translateY(14px); animation: in .9s var(--ease) forwards; animation-delay: calc(var(--i, 0) * 80ms + 250ms); }
-  @keyframes in { to { opacity: 1; transform: none; } }
+  footer a, footer button { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; text-decoration: underline; text-decoration-thickness: .5px; text-underline-offset: 3px; }
+  footer a:hover, footer button:hover { color: var(--nevoa); }
+  footer .sep { margin: 0 .6em; }
 
   /* ---------- Painel do e-book (nome + e-mail) ---------- */
   dialog.sheet {
     margin: auto auto 0; width: 100%; max-width: 460px; max-height: none;
     padding: 0; border: 0; background: transparent; color: var(--papel);
   }
-  dialog.sheet::backdrop { background: rgba(14, 22, 30, .55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+  dialog.sheet::backdrop { background: rgba(14, 22, 30, .7); }
   dialog.sheet[open] .sheet-body { animation: up .5s var(--ease); }
   @keyframes up { from { transform: translateY(100%); } }
   .sheet-body {
     position: relative;
-    margin: 0 10px calc(10px + env(safe-area-inset-bottom));
-    padding: 12px 20px 22px;
-    border-radius: 26px;
-    background: rgba(28, 43, 58, .78);
-    border: .5px solid var(--glass-line);
-    backdrop-filter: blur(28px) saturate(160%); -webkit-backdrop-filter: blur(28px) saturate(160%);
+    margin: 0;
+    padding: 12px 20px calc(22px + env(safe-area-inset-bottom));
+    background: var(--marinho);
+    border-top: 1px solid var(--linha-forte);
   }
   .grabber { width: 36px; height: 4px; border-radius: 4px; background: var(--grafite); margin: 0 auto 16px; }
   .close {
@@ -261,13 +162,13 @@
   .field { position: relative; }
   .field input {
     width: 100%; height: 52px; padding: 18px 14px 6px;
-    border-radius: 14px; outline: none;
-    background: rgba(245, 244, 240, .06);
-    border: .5px solid var(--glass-line);
+    border-radius: 0; outline: none;
+    background: var(--superficie);
+    border: 1px solid var(--linha);
     font-size: 16px; color: var(--papel);
     transition: border-color .25s var(--ease), background .25s var(--ease);
   }
-  .field input:focus { border-color: var(--nevoa); background: rgba(245, 244, 240, .09); }
+  .field input:focus { border-color: var(--nevoa); }
   .field label {
     position: absolute; left: 15px; top: 16px;
     font-size: 15px; color: var(--concreto); pointer-events: none;
@@ -276,27 +177,21 @@
   .field input:focus + label, .field input:not(:placeholder-shown) + label { transform: translateY(-9px) scale(.72); color: var(--nevoa); }
   .hp { position: absolute; left: -9999px; }
   .btn-primary {
-    height: 52px; margin-top: 4px; border-radius: 14px;
+    height: 52px; margin-top: 4px;
     display: flex; align-items: center; justify-content: center; gap: 10px;
     background: var(--papel); color: var(--marinho);
     font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
-    transition: opacity .2s, transform .2s var(--ease);
   }
-  .btn-primary:active { transform: scale(.985); }
   .btn-primary[disabled] { opacity: .6; cursor: progress; }
   .btn-primary svg { width: 17px; height: 17px; }
   .fine { margin-top: 4px; font-size: 11px; line-height: 1.45; color: var(--concreto); text-align: center; }
+  .fine a { text-decoration: underline; text-decoration-thickness: .5px; text-underline-offset: 2px; }
   .form-error { display: none; font-size: 12.5px; color: #E8B4A8; text-align: center; }
   .form-error.show { display: block; }
 
   .unlocked { display: none; text-align: center; }
   .sheet.done .lead-form, .sheet.done .sheet-head { display: none; }
   .sheet.done .unlocked { display: block; }
-  .unlocked .check {
-    width: 56px; height: 56px; margin: 6px auto 14px; border-radius: 50%;
-    display: grid; place-items: center; border: .5px solid var(--glass-line);
-  }
-  .unlocked .check svg { width: 24px; height: 24px; }
   .unlocked h3 { font-family: var(--serif-display); font-weight: var(--titulo-peso); font-variation-settings: var(--titulo-opsz); font-size: 23px; }
   .unlocked p { margin: 8px 0 20px; font-size: 13.5px; color: var(--nevoa); opacity: .85; }
 
@@ -304,59 +199,38 @@
   .toast {
     position: fixed; z-index: 50; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom));
     transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
-    padding: 12px 18px; border-radius: 999px; font-size: 13.5px;
-    background: rgba(245, 244, 240, .92); color: var(--marinho);
+    padding: 12px 18px; font-size: 13.5px;
+    background: var(--papel); color: var(--marinho);
     transition: opacity .3s var(--ease), transform .3s var(--ease);
   }
   .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
-  @media (min-width: 520px) {
-    .page { padding-top: 24px; }
-    .hero { margin: 0; border-radius: 0 0 28px 28px; }
-    .topbar { left: 16px; right: 16px; top: 38px; }
-    .fab { right: 28px; bottom: 28px; }
+  /* Celulares baixos (ex.: iPhone SE com as barras do Safari): espaçamento mais justo */
+  @media (max-height: 620px) {
+    .page { padding-top: calc(14px + env(safe-area-inset-top)); }
+    .filete { margin: 10px auto 12px; }
+    .lista { gap: 6px; }
+    .linha { padding: 11px 16px; }
+    footer { margin-top: 12px; }
+    .feature figure { height: clamp(120px, calc(100svh - 400px), 232px); }
   }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
-    .reveal { opacity: 1; transform: none; }
-  }
-  /* Navegadores sem desfoque: vidro mais opaco para manter a leitura */
-  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-    .glass, .icon-btn, .sheet-body { background: rgba(38, 56, 74, .95); }
   }
 </style>
 </head>
 <body>
 
-<div class="backdrop" aria-hidden="true">
-  <div class="trama"></div>
-  <div class="glow g1"></div>
-  <div class="glow g2"></div>
-</div>
-
 <main class="page">
-  <div class="topbar">
-    <a class="icon-btn reveal" style="--i:0" data-link="site" data-umami-event="site-topo" target="_blank" rel="noopener" aria-label="Site do escritório">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
-    </a>
-    <button class="icon-btn reveal" style="--i:0" data-action="share" data-umami-event="compartilhar" aria-label="Compartilhar">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3.5M7.5 8 12 3.5 16.5 8"/><path d="M8 11H6.5A1.5 1.5 0 0 0 5 12.5v7A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5H16"/></svg>
-    </button>
-  </div>
-
-  <div class="hero" aria-hidden="true">
-    <div class="arch"></div>
-  </div>
-
   <header class="identity">
-    <h1 class="reveal" style="--i:2"><span class="wordmark" role="img" aria-label="Moreira · Oliveira Advocacia"></span></h1>
-    <p class="descriptor reveal" style="--i:3">Consultoria tributária e empresarial</p>
-    <div class="filete reveal" style="--i:4"></div>
+    <h1><span class="wordmark" role="img" aria-label="Moreira · Oliveira Advocacia"></span></h1>
+    <p class="descriptor">Consultoria tributária e empresarial</p>
+    <div class="filete"></div>
   </header>
 
-  <section class="grid" aria-label="Links">
+  <section class="lista" aria-label="Links">
     <!-- 1. E-book (abre o formulário antes do download) -->
-    <a class="glass feature span-2 reveal" style="--i:5" data-link="ebook" data-umami-event="ebook-clique" aria-haspopup="dialog">
+    <a class="card feature" data-link="ebook" data-umami-event="ebook-clique" aria-haspopup="dialog">
       <figure>
         <img src="assets/capa-reforma-tributaria.webp" alt="Reforma Tributária: impactos para a indústria de máquinas e equipamentos" width="1200" height="1200" loading="eager" decoding="async">
         <span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg></span>
@@ -368,32 +242,26 @@
     </a>
 
     <!-- 2. WhatsApp -->
-    <a class="glass tile reveal" style="--i:6" data-link="whatsapp" data-umami-event="whatsapp" target="_blank" rel="noopener">
-      <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.860 9.860 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></span>
-      <span class="label">WhatsApp<small>Fale com a equipe</small></span>
+    <a class="card linha" data-link="whatsapp" data-umami-event="whatsapp" target="_blank" rel="noopener">
+      <span class="label">WhatsApp</span><small>(61) 99577-6667</small>
     </a>
 
     <!-- 3. E-mail -->
-    <a class="glass tile reveal" style="--i:7" data-link="email" data-umami-event="email">
-      <span class="ico"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="6.5" width="21" height="15" rx="1.5"/><path d="m4 7.5 10 7.5 10-7.5"/></svg></span>
-      <span class="label">E-mail<small>Escreva para nós</small></span>
+    <a class="card linha" data-link="email" data-umami-event="email">
+      <span class="label">E-mail</span><small>contato@moreiraoliveira.adv.br</small>
     </a>
 
     <!-- 4. Site -->
-    <a class="glass tile span-2 reveal" style="--i:8" data-link="site" data-umami-event="site" target="_blank" rel="noopener">
-      <span class="ico"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 14 4l10 6.5"/><path d="M6 10.5V22M10.7 10.5V22M17.3 10.5V22M22 10.5V22M3.5 24h21"/></svg></span>
-      <span class="label">Site institucional<small>Saiba mais</small></span>
-      <svg class="corner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+    <a class="card linha" data-link="site" data-umami-event="site" target="_blank" rel="noopener">
+      <span class="label">Site institucional</span><small>marcoantoniooliveira.adv.br</small>
     </a>
   </section>
 
-  <footer class="reveal" style="--i:9">
-    <p>Moreira · Oliveira Advocacia</p>
-    <p>Brasília · DF</p>
+  <footer>
+    <p>Moreira · Oliveira Advocacia · Brasília/DF</p>
+    <p><button type="button" data-action="share" data-umami-event="compartilhar">Compartilhar</button><span class="sep" aria-hidden="true">·</span><a href="/privacidade/">Política de Privacidade</a></p>
   </footer>
 </main>
-
-<a class="fab" data-link="whatsapp" data-umami-event="whatsapp-flutuante" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.860 9.860 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
 
 <dialog class="sheet" id="ebook" aria-labelledby="ebook-title">
   <div class="sheet-body">
@@ -425,11 +293,10 @@
         Baixar material
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg>
       </button>
-      <p class="fine">Ao baixar, você autoriza que seus dados sejam utilizados para contato pela Moreira · Oliveira Advocacia.</p>
+      <p class="fine">Ao baixar, você autoriza que seus dados sejam utilizados para contato pela Moreira · Oliveira Advocacia, conforme a <a href="/privacidade/" target="_blank" rel="noopener">Política de Privacidade</a>.</p>
     </form>
 
     <div class="unlocked">
-      <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></div>
       <h3>Tudo pronto</h3>
       <p>Obrigado!</p>
       <a class="btn-primary" data-link="pdf" data-umami-event="ebook-download" download="Reforma-Tributaria-VDMA-Moreira-Oliveira.pdf" target="_blank" rel="noopener">
@@ -513,23 +380,6 @@
     pdf: PERFIL.pdf,
   };
   document.querySelectorAll("[data-link]").forEach((el) => { el.href = hrefs[el.dataset.link]; });
-
-  /* ---------- Luz que segue o dedo / cursor ---------- */
-  document.querySelectorAll(".glass").forEach((el) => {
-    const move = (e) => {
-      const r = el.getBoundingClientRect();
-      el.style.setProperty("--mx", `${e.clientX - r.left}px`);
-      el.style.setProperty("--my", `${e.clientY - r.top}px`);
-    };
-    el.addEventListener("pointermove", move);
-    el.addEventListener("pointerdown", (e) => { move(e); el.classList.add("is-pressed"); navigator.vibrate?.(6); });
-    ["pointerup", "pointercancel", "pointerleave"].forEach((t) =>
-      el.addEventListener(t, () => setTimeout(() => el.classList.remove("is-pressed"), 180)));
-  });
-
-  /* ---------- Paralaxe suave do monograma ---------- */
-  const root = document.documentElement;
-  addEventListener("scroll", () => root.style.setProperty("--scroll", Math.min(scrollY, 600)), { passive: true });
 
   /* ---------- Aviso ---------- */
   const toastEl = document.getElementById("toast");
