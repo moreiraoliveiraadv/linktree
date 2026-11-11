@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /pedidosadm/
 
 Sitemap: https://www.moreiraoliveira.adv.br/sitemap.xml

@@ -5,6 +5,7 @@ Site do escritório em **moreiraoliveira.adv.br**:
 - `/` página provisória: logomarca e botão de contato pelo WhatsApp
 - `/links/` página de links
 - `/privacidade/` Política de Privacidade
+- `/pedidosadm/` formulário interno de pedidos de documentos (código-fonte em moreiraoliveiraadv/pedidosadm; login só para e-mails @moreiraoliveira.adv.br)
 
 ## Estrutura
 
