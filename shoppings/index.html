@@ -545,7 +545,8 @@ p:not(.bod),li,dd,blockquote,figcaption,.corpo,.citacao,.linha,.sub,.lead,.abas 
 
 /* tabela da folha: relação em cima, selo e regime embaixo (cabe em qualquer largura) */
 .f-tab,.f-tab tbody{display:block;width:100%}
-.f-tab tr{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:14px;row-gap:8px;align-items:center;padding:14px 0}
+.f-tab tr{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:14px;row-gap:8px;align-items:start;padding:14px 0}
+.f-tab td:last-child{line-height:1.45;padding-top:2px!important}
 .f-tab th{grid-column:1/-1;width:auto!important;padding:0!important}
 .f-tab td{padding:0!important}
 @media(max-width:900px){.rodape img{height:38px}}
