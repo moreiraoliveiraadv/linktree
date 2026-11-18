@@ -74,9 +74,9 @@ body{background:var(--papel);color:var(--marinho);font:400 17px/1.65 'Source Ser
  .b h1{font-size:min(56px,12.2vw);margin-bottom:28px}
  .hero{height:auto;min-height:100svh}
  .b{height:auto;min-height:100svh;padding-top:calc(var(--vh-top) + 64px)}
- .b-dir .sub{text-align:left}
+
  .b-dir{padding:24px}
- .datas{grid-template-columns:1fr;row-gap:12px;margin-top:36px}.osd{font-size:12px}
+ .datas{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:12px;row-gap:10px;margin-top:22px}.osd{font-size:9px;letter-spacing:0;line-height:1.5;opacity:.8}.datas{column-gap:8px}.osd .rec{grid-column:1/-1}.osd .rec i{width:6px;height:6px;margin-top:4px}
 }
 
 /* ===== seções seguintes · linguagem da direção B ===== */
@@ -192,7 +192,7 @@ html{scroll-padding-top:88px}
 .pessoas article{border-top:1px solid var(--marinho);padding-top:24px}
 .pessoas h3{font-size:22px;letter-spacing:.03em;text-transform:uppercase;line-height:1.15}
 .pessoas .rot{display:block;margin:12px 0 18px;color:var(--paranoa)}
-.pessoas .corpo{font-size:16px;text-align:left}
+.pessoas .corpo{font-size:16px}
 
 /* 07 */
 .passos{list-style:none;border-top:1px solid var(--marinho)}
@@ -230,7 +230,7 @@ html{scroll-padding-top:88px}
  .g-caso{padding-top:72px}
  .marcos li{grid-template-columns:1fr;gap:6px}
  .citacao{margin:36px 0 0}
- .corpo,.aviso{text-align:left}
+
  .faixa-cta{flex-direction:column;align-items:flex-start;margin-top:64px}
  .fluxo{grid-template-columns:1fr;row-gap:16px}.fluxo .seta{height:28px;width:1px;justify-self:start;margin-left:12px}.fluxo .seta:after{right:-4px;top:auto;bottom:0;border-left:4.5px solid transparent;border-right:4.5px solid transparent;border-top:8px solid var(--marinho);border-bottom:0}.fluxo .seta span{top:6px;left:18px;text-align:left}.fluxo .volta{grid-column:1}
  .folha{padding:28px 22px 20px;min-height:0}
@@ -374,7 +374,7 @@ html{scroll-padding-top:88px}
 #oportunidade .c-esq{grid-column:1/7}
 #oportunidade .c-dir{grid-column:7/13;padding-top:62px}
 #oportunidade .lead{margin-bottom:24px}
-#oportunidade .corpo{text-align:left;color:var(--paranoa);max-width:30em}
+#oportunidade .corpo{color:var(--paranoa);max-width:30em}
 
 /* nota horizontal nas duas colunas */
 .aviso-h{grid-column:1/13;margin-top:56px;border-top:1px solid var(--paranoa);border-bottom:1px solid var(--paranoa);padding:26px 0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:32px;align-items:baseline}
@@ -530,7 +530,7 @@ html{scroll-padding-top:88px}
 @media(max-width:1280px) and (min-width:901px){.topo-in{gap:40px}}
 @media(max-width:560px){.topo .btn{white-space:nowrap}}
 /* todos os textos justificados (manual da marca) */
-p,li,dd,blockquote,figcaption,.corpo,.citacao,.linha,.sub{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+p:not(.bod),li,dd,blockquote,figcaption,.corpo,.citacao,.linha,.sub,.lead{text-align:justify!important;hyphens:auto;-webkit-hyphens:auto}
 .bod,h1,h2,h3,summary,.fq-t,.cz-tit{hyphens:manual;-webkit-hyphens:manual}
 
 /* revisão mobile */
