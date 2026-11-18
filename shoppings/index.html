@@ -75,8 +75,7 @@ body{background:var(--papel);color:var(--marinho);font:400 17px/1.65 'Source Ser
  .b{padding:0 24px 56px}
  .b-grade{display:block}
  .b h1{font-size:min(56px,12.2vw);margin-bottom:28px}
- .hero{height:auto;min-height:100svh}
- .b{height:auto;min-height:100svh;padding-top:calc(var(--vh-top) + 64px)}
+
 
  .b-dir{padding:24px}
  .datas{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:12px;row-gap:10px;margin-top:22px}.osd{font-size:9px;letter-spacing:0;line-height:1.5;opacity:.8}.datas{column-gap:8px}.osd .rec{grid-column:1/-1}.osd .rec i{width:6px;height:6px;margin-top:4px}
@@ -550,6 +549,19 @@ p:not(.bod),li,dd,blockquote,figcaption,.corpo,.citacao,.linha,.sub,.lead,.abas 
 .f-tab th{grid-column:1/-1;width:auto!important;padding:0!important}
 .f-tab td{padding:0!important}
 @media(max-width:900px){.rodape img{height:38px}}
+
+/* abertura no celular: a cena ocupa a primeira tela (título, datas e controles); o painel vem logo abaixo */
+@media(max-width:900px){
+ .hero{height:auto!important;min-height:0!important}
+ .hero .vh-stage{bottom:auto!important;height:100svh!important}
+ .hero .vh-poster{height:100svh!important;bottom:auto!important}
+ .hero .vh-bottom{bottom:auto!important;top:calc(100svh - 118px)}
+ .b{display:flex;flex-direction:column;justify-content:flex-start;height:auto!important;padding:max(calc(var(--vh-top) + 64px),calc(100svh - 340px)) 24px 56px!important}
+ .b-grade{display:contents}
+ .b h1{order:1;margin-bottom:0}
+ .datas{order:2;margin:22px 0 150px!important}
+ .b-dir{order:3}
+}
 </style>
 </head>
 <body>
