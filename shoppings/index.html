@@ -11,13 +11,16 @@
 <link rel="icon" href="img/Monograma_Marinho.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..900&family=Jost:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="preload" href="img/BodoniModaMO.woff2" as="font" type="font/woff2" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root{--marinho:#1C2B3A;--paranoa:#4D6273;--nevoa:#D5DADD;--papel:#F5F4F0}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--papel);color:var(--marinho);font:400 17px/1.65 'Source Serif 4',Georgia,serif;-webkit-font-smoothing:antialiased}
 /* Padrão da marca (LEIA-ME de 11/11/2026): Bodoni Moda peso 500, tamanho óptico 8 */
-.bod{font-family:'Bodoni Moda',Georgia,serif;font-optical-sizing:none;font-variation-settings:'opsz' 8;font-weight:500}
+/* Bodoni Moda MO: instância travada no padrão da marca (peso 500, tamanho óptico 8), arquivo 04_FONTES */
+@font-face{font-family:'Bodoni Moda';src:url(img/BodoniModaMO.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+.bod{font-family:'Bodoni Moda',Georgia,serif;font-weight:500}
 .rot{font:500 11px/1.5 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase}
 
 /* cabeçalho fixo */
@@ -68,7 +71,9 @@ body{background:var(--papel);color:var(--marinho);font:400 17px/1.65 'Source Ser
  .hero{--vh-top:80px}
  .b{padding:0 24px 56px}
  .b-grade{display:block}
- .b h1{font-size:56px;margin-bottom:28px}
+ .b h1{font-size:min(56px,12.2vw);margin-bottom:28px}
+ .hero{height:auto;min-height:100svh}
+ .b{height:auto;min-height:100svh;padding-top:calc(var(--vh-top) + 64px)}
  .b-dir .sub{text-align:left}
  .b-dir{padding:24px}
  .datas{grid-template-columns:1fr;row-gap:12px;margin-top:36px}.osd{font-size:12px}
@@ -384,7 +389,7 @@ html{scroll-padding-top:88px}
 .pessoas2 img{width:200px;aspect-ratio:3/4;object-fit:cover;filter:grayscale(1) contrast(1.02);display:block}
 .pessoas2 h3{font-size:22px;letter-spacing:.03em;text-transform:uppercase;line-height:1.15;min-height:2.3em}
 .pessoas2 .rot{display:block;margin:10px 0 18px;color:var(--paranoa);min-height:3em}
-.pessoas2 .corpo{font-size:16px;text-align:left}
+.pessoas2 .corpo{font-size:16px}
 @media(max-width:1100px){.pessoas2 article{grid-template-columns:140px minmax(0,1fr)}.pessoas2 img{width:140px}}
 @media(max-width:900px){.pessoas2{grid-template-columns:1fr;row-gap:40px}.pessoas2 h3,.pessoas2 .rot{min-height:0}}
 
@@ -517,6 +522,27 @@ html{scroll-padding-top:88px}
 .cz-rac{animation:czIn .35s ease}
 @keyframes czIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 .cz-res>a.f-volta{display:table;margin-top:28px}
+
+/* cabeçalho: nada quebra em duas linhas */
+.topo nav a,.topo .btn{white-space:nowrap}
+.topo nav{flex-wrap:nowrap}
+@media(max-width:1280px){.topo nav{display:none}.topo .btn-calc{margin-left:auto}}
+@media(max-width:1280px) and (min-width:901px){.topo-in{gap:40px}}
+@media(max-width:560px){.topo .btn{white-space:nowrap}}
+/* todos os textos justificados (manual da marca) */
+p,li,dd,blockquote,figcaption,.corpo,.citacao,.linha,.sub{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.bod,h1,h2,h3,summary,.fq-t,.cz-tit{hyphens:manual;-webkit-hyphens:manual}
+
+/* revisão mobile */
+.bod{text-align:left}
+@media(max-width:600px){
+ .pessoas2 article{grid-template-columns:1fr;row-gap:20px}
+ .pessoas2 img{width:150px}
+ .f-tab,.f-tab tbody,.f-tab tr,.f-tab th,.f-tab td{display:block;width:auto}
+ .f-tab tr{padding:12px 0}
+ .f-tab th{padding:0 0 8px}
+ .f-tab td{padding:0 0 6px}
+}
 </style>
 </head>
 <body>
@@ -565,7 +591,6 @@ html{scroll-padding-top:88px}
 <div class="cal-leg" aria-hidden="true"><span><i class="lg hoje"></i>Hoje</span><span><i class="lg lg-p"></i>Prazo</span></div>
 <div class="cal-det" id="calDet" aria-live="polite"></div>
 </div>
-<p class="fonte">Fontes: Ato Conjunto RFB/CGIBS nº 4/2026, art. 1º, III, "f" e "g"; Constituição Federal, ADCT, arts. 126 a 128.</p>
 </div>
 </div>
 </section>
@@ -616,7 +641,6 @@ html{scroll-padding-top:88px}
 <p class="bod">Mapear essas relações é o primeiro passo.</p>
 <a class="btn claro" href="#formulario">Gerar a nota técnica</a>
 </div>
-<p class="fonte fonte-l">Fontes: Lei Complementar nº 214/2025, arts. 26, 252 e 261.</p>
 </div>
 </section>
 
@@ -833,7 +857,7 @@ html{scroll-padding-top:88px}
 
 <div class="fq-item cz-num"><p class="fq-t"><i></i>Valores mensais</p><div class="cz-g"><div class="cz-f"><label class="cz-l" for="k_folha">Folha de salários, com pró-labore e encargos</label><div class="cz-m"><span>R$</span><input id="k_folha" class="cz-in" inputmode="numeric" autocomplete="off" placeholder="0,00"></div><label class="cz-na"><input type="checkbox" data-na="k_folha"><span>Não se aplica</span></label></div><div class="cz-f"><label class="cz-l" for="k_gasto">Gasto da operação, com rateio do shopping</label><div class="cz-m"><span>R$</span><input id="k_gasto" class="cz-in" inputmode="numeric" autocomplete="off" placeholder="0,00"></div></div><div class="cz-f"><label class="cz-l" for="k_emp">Parcelas de empréstimos e financiamentos</label><div class="cz-m"><span>R$</span><input id="k_emp" class="cz-in" inputmode="numeric" autocomplete="off" placeholder="0,00"></div><label class="cz-na"><input type="checkbox" data-na="k_emp"><span>Não se aplica</span></label></div></div></div>
 
-<div class="fq-item" role="radiogroup" aria-labelledby="t_kreg"><p class="fq-t" id="t_kreg"><i>02</i><span>Regime de tributação <b>PREVISTO</b> para 2027 <span class="cz-ast">*</span></span></p><div class="fq-ops"><label><input type="radio" name="kreg" value="puro"><span>Simples puro</span></label><label><input type="radio" name="kreg" value="hibrido"><span>Simples híbrido</span></label><label><input type="radio" name="kreg" value="presumido"><span>Lucro Presumido</span></label><label><input type="radio" name="kreg" value="real"><span>Lucro Real</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_kreg"><p class="fq-t" id="t_kreg"><i>02</i><span>Regime de tributação <b>PREVISTO</b> para <span style="white-space:nowrap">2027 <span class="cz-ast">*</span></span></span></p><div class="fq-ops"><label><input type="radio" name="kreg" value="puro"><span>Simples puro</span></label><label><input type="radio" name="kreg" value="hibrido"><span>Simples híbrido</span></label><label><input type="radio" name="kreg" value="presumido"><span>Lucro Presumido</span></label><label><input type="radio" name="kreg" value="real"><span>Lucro Real</span></label></div></div>
 
 <div class="fq-item" role="radiogroup" aria-labelledby="t_kcli"><p class="fq-t" id="t_kcli"><i>03</i>Perfil de cliente</p><div class="fq-ops"><label><input type="radio" name="kcli" value="b2b"><span>Empresas (B2B)</span></label><label><input type="radio" name="kcli" value="b2c"><span>Consumidor final (B2C)</span></label><label><input type="radio" name="kcli" value="ambos"><span>Ambos</span></label></div></div>
 
@@ -897,7 +921,8 @@ if(tc&&!matchMedia('(prefers-reduced-motion: reduce)').matches){(function loop()
 })();
 (function(){
 /* contagens reais (horário de Brasília) */
-function dias(iso){return Math.ceil((new Date(iso)-new Date())/864e5)}
+/* dias de calendário entre hoje e a data (mesma conta do calendário da seção 02) */
+function dias(iso){var a=iso.split('T')[0].split('-'),h=new Date();return Math.round((new Date(+a[0],a[1]-1,+a[2])-new Date(h.getFullYear(),h.getMonth(),h.getDate()))/864e5)}
 var d=dias('2026-12-01T00:00:00-03:00'),N=document.getElementById('prazoN'),T=document.getElementById('prazoT'),m=document.getElementById('m1t');
 m=m||{};N=N||{style:{}};T=T||{};if(d>1){N.textContent=d;m.textContent='Em '+d+' dias'}else if(d===1){N.textContent='1';T.textContent='dia para a NFS-e obrigatória';m.textContent='Amanhã'}else{N.textContent='Em vigor';N.style.fontSize='40px';T.textContent='NFS-e obrigatória desde 1º/12/2026';m.textContent='Em vigor'}
 var c=dias('2027-01-01T00:00:00-03:00'),F=document.getElementById('fechaT');
