@@ -5,6 +5,7 @@ Site do escritório em **moreiraoliveira.adv.br**:
 - `/` página provisória: logomarca e botão de contato pelo WhatsApp
 - `/links/` página de links
 - `/privacidade/` Política de Privacidade
+- `/shoppings/` Vitrine tributária para shopping centers: formulário da Nota Técnica Preliminar (Supabase) e calculadora do lojista
 - `/pedidosadm/` formulário interno de pedidos de documentos (código-fonte em moreiraoliveiraadv/pedidosadm; login só para e-mails @moreiraoliveira.adv.br)
 
 ## Estrutura
@@ -15,6 +16,10 @@ favicon.ico, icon-192.png, ...      ícones do site (múltiplos de 48 px, exigê
 robots.txt, sitemap.xml              orientação para buscadores
 privacidade/
   index.html                         Política de Privacidade (LGPD)
+shoppings/
+  index.html                         Vitrine tributária (landing, formulário e calculadora)
+  vistoria-hero.js                   cena 3D da abertura
+  img/                               logos, fotos e trama
 links/
   index.html                         página (HTML, CSS e JS num arquivo só)
   assets/                            logo, monograma, trama, capa e PDF do material VDMA

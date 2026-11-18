@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vitrine tributária para shopping centers · Moreira Oliveira Advocacia</title>
+<meta name="description" content="O que o seu shopping precisa olhar antes de 2027: Nota Técnica Preliminar sobre a reforma tributária e calculadora do lojista.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://www.moreiraoliveira.adv.br/shoppings/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="img/Monograma_Marinho.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..900&family=Jost:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--marinho:#1C2B3A;--paranoa:#4D6273;--nevoa:#D5DADD;--papel:#F5F4F0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--papel);color:var(--marinho);font:400 17px/1.65 'Source Serif 4',Georgia,serif;-webkit-font-smoothing:antialiased}
+/* Padrão da marca (LEIA-ME de 11/11/2026): Bodoni Moda peso 500, tamanho óptico 8 */
+.bod{font-family:'Bodoni Moda',Georgia,serif;font-optical-sizing:none;font-variation-settings:'opsz' 8;font-weight:500}
+.rot{font:500 11px/1.5 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+
+/* cabeçalho fixo */
+.topo{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid rgba(245,244,240,.25);transition:background .3s,border-color .3s}
+.topo-in{padding:0 72px;height:88px;display:flex;align-items:center;gap:40px}
+.topo-logo img{height:30px;display:block}.topo .l-pos{display:none}
+.topo nav{margin-left:auto;display:flex;gap:32px}
+.topo nav a{font:500 11px/1 Jost,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--papel);text-decoration:none;opacity:.85}
+.topo nav a:hover{opacity:1}
+.btn{display:inline-block;font:500 12px/1 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;padding:19px 28px;transition:background .25s,color .25s,border-color .25s}
+.topo .btn{padding:15px 20px;font-size:11px;color:var(--papel);border:1px solid var(--papel)}
+.topo .btn:hover{background:var(--papel);color:var(--marinho)}
+.topo.solido{background:var(--papel);border-bottom-color:var(--nevoa)}
+.topo.solido .l-neg{display:none}.topo.solido .l-pos{display:block}
+.topo.solido nav a{color:var(--marinho)}
+.topo.solido .btn{background:var(--marinho);border-color:var(--marinho);color:var(--papel)}
+
+/* primeira dobra: cena viva por trás */
+.hero{height:100vh;height:100svh;min-height:720px;color:var(--papel);--vh-top:104px}
+.hero .vh-stage::after{background:rgba(28,43,58,.32)!important}
+/* plaquinha e cantos acima do véu: Papel sólido, texto Marinho nítido */
+.hero .vh-stage::after{z-index:1}
+.hero .vh-stage svg{z-index:2}
+.hero .vh-tag-box{fill:#F5F4F0!important;stroke:#F5F4F0;stroke-width:1}
+.hero .vh-tag-text{fill:#1C2B3A!important;font-weight:600!important}
+.b{height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:0 92px 76px}
+.b-grade{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:32px;align-items:end}
+.b h1{grid-column:1/9;font-size:clamp(60px,6.8vw,108px);line-height:.9;letter-spacing:.03em;text-transform:uppercase}
+.b-dir{grid-column:9/13;display:flex;flex-direction:column;gap:22px;padding:32px 34px 34px;background:rgba(28,43,58,.82);border-top:1px solid var(--papel)}
+.b-dir .linha{font-size:24px;line-height:1.3}
+.b-dir .sub{font-size:15px;line-height:1.6;color:var(--nevoa);text-align:justify;hyphens:manual}
+.b-dir .btn{align-self:flex-start;background:var(--papel);color:var(--marinho)}
+.b-dir .btn:hover{background:var(--nevoa)}
+.datas{margin-top:56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;column-gap:32px;color:var(--papel)}
+/* visor de câmera: letra monoespaçada do sistema, só nesta faixa */
+.osd{font:500 13px/1.6 ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em;font-variant-numeric:tabular-nums;opacity:.92}
+.osd b{font-weight:500;color:var(--nevoa)}
+.osd .rec{display:flex;align-items:flex-start;gap:8px;white-space:nowrap}
+.osd .rec i{width:9px;height:9px;border-radius:50%;background:var(--papel);margin-top:6px;animation:recpisca 1.2s steps(1) infinite}
+.osd .rec em{font-style:normal}
+@keyframes recpisca{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.osd .rec i{animation:none}}
+
+/* continuação, só para testar a rolagem */
+
+@media(max-width:900px){
+ .topo-in{padding:0 16px;height:64px;gap:12px}.topo nav{display:none}.topo-logo img{height:22px}.topo .btn{margin-left:auto;padding:11px 12px;font-size:10px;letter-spacing:.12em}
+ .hero{--vh-top:80px}
+ .b{padding:0 24px 56px}
+ .b-grade{display:block}
+ .b h1{font-size:56px;margin-bottom:28px}
+ .b-dir .sub{text-align:left}
+ .b-dir{padding:24px}
+ .datas{grid-template-columns:1fr;row-gap:12px;margin-top:36px}.osd{font-size:12px}
+}
+
+/* ===== seções seguintes · linguagem da direção B ===== */
+html{scroll-padding-top:88px}
+.sec{padding:136px 0 128px}
+.papel{background:var(--papel);color:var(--marinho)}
+.marinho{background:var(--marinho);color:var(--papel)}
+.nevoa{background:#E9EBEC;color:var(--marinho)}
+.g{max-width:1296px;margin:0 auto;padding:0 72px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:32px}
+.c-esq{grid-column:1/6;align-self:start}
+.c-dir{grid-column:7/13}
+.fixa{position:sticky;top:120px}
+.num{display:flex;align-items:center;gap:14px;font:500 11px/1 Jost,sans-serif;letter-spacing:.26em;text-transform:uppercase;margin-bottom:30px;color:var(--paranoa)}
+.marinho .num{color:var(--nevoa)}
+.num:before{content:'';width:28px;height:28px;border-left:1px solid currentColor;border-top:1px solid currentColor;margin-right:2px;transform:translateY(8px)}
+.sec h2{font-size:clamp(32px,3.2vw,46px);line-height:1.08;letter-spacing:.03em;text-transform:uppercase;margin-bottom:28px}
+.corpo{font-size:17px;line-height:1.7;text-align:justify;hyphens:auto;-webkit-hyphens:auto;text-wrap:pretty}
+.marinho .corpo{color:var(--nevoa)}
+.fonte{font:400 12px/1.5 Jost,sans-serif;color:var(--paranoa);margin-top:40px}
+.marinho .fonte{color:var(--nevoa);opacity:.75}
+.btn.claro{background:var(--papel);color:var(--marinho)}
+.btn.claro:hover{background:var(--nevoa)}
+
+/* 02 */
+.ano{font-size:clamp(120px,14vw,216px);line-height:.82;letter-spacing:.01em;margin:0 0 26px -.04em}
+.prazo{margin-top:44px;border-top:1px solid var(--marinho);padding-top:18px;display:flex;align-items:baseline;gap:18px}
+.prazo b{font-size:64px;line-height:1}
+.prazo span{font:500 11px/1.5 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--paranoa);max-width:15em}
+.marcos{list-style:none;border-top:1px solid var(--marinho);margin-top:34px}
+.marcos li{display:grid;grid-template-columns:168px 1fr auto;gap:24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--nevoa)}
+.marcos .data{font-size:24px;line-height:1.1}
+.marcos p{font-size:18px;line-height:1.5}
+.marcos em{font:500 10px/1 Jost,sans-serif;font-style:normal;letter-spacing:.2em;text-transform:uppercase;color:var(--paranoa);white-space:nowrap}
+.marcos li.prox em{color:var(--papel);background:var(--marinho);padding:6px 8px}
+.citacao{margin:48px 0 0 168px;padding-left:24px;border-left:1px solid var(--nevoa);font-style:italic;font-size:21px;line-height:1.5;color:var(--paranoa)}
+
+/* 03 */
+.trama{height:120px;background:var(--marinho) url(img/Trama_Diagonal_Paranoa_sobre_Marinho_PRINCIPAL.png) center/520px repeat}
+#caso{padding-top:0}
+.g-caso{padding-top:112px}
+.total{display:flex;align-items:baseline;gap:16px;margin-top:40px;padding-top:18px;border-top:1px solid var(--paranoa)}
+.total b{font-size:96px;line-height:.9}
+.total span{font:500 11px/1.5 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--nevoa)}
+.ind-cab{display:flex;justify-content:space-between;font:500 10px/1 Jost,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--nevoa);padding-bottom:14px;border-bottom:1px solid var(--papel)}
+.ind-cab.sep{margin-top:56px}
+.indice{list-style:none}
+.indice li{position:relative;display:grid;grid-template-columns:60px 1fr auto;gap:20px;align-items:baseline;padding:22px 14px;margin:0 -14px;border-bottom:1px solid rgba(213,218,221,.22);outline:none;cursor:default}
+.indice .n{font-size:20px;color:var(--paranoa);transition:color .2s}
+.indice .nome{font-size:clamp(20px,2vw,27px);line-height:1.15;letter-spacing:.03em;text-transform:uppercase}
+.indice em{font:500 10px/1 Jost,sans-serif;font-style:normal;letter-spacing:.2em;text-transform:uppercase;color:var(--nevoa);white-space:nowrap}
+.indice li.forte em{color:var(--marinho);background:var(--papel);padding:6px 8px}
+/* visor ao passar: cantos e etiqueta, como na cena da primeira dobra */
+.indice li:before,.indice li:after{content:'';position:absolute;width:16px;height:16px;border:0 solid var(--papel);opacity:0;transition:opacity .2s,transform .2s}
+.indice li:before{left:0;top:6px;border-left-width:1px;border-top-width:1px;transform:translate(6px,6px)}
+.indice li:after{right:0;bottom:6px;border-right-width:1px;border-bottom-width:1px;transform:translate(-6px,-6px)}
+.indice .tag{position:absolute;left:14px;top:-9px;font:500 9px/1 Jost,sans-serif;font-style:normal;letter-spacing:.22em;text-transform:uppercase;background:var(--papel);color:var(--marinho);padding:4px 7px;opacity:0;transition:opacity .2s}
+.indice li:hover:before,.indice li:hover:after,.indice li:focus-visible:before,.indice li:focus-visible:after,.indice li.ativo:before,.indice li.ativo:after{opacity:1;transform:none}
+.indice li:hover .tag,.indice li:focus-visible .tag,.indice li.ativo .tag{opacity:1}
+.indice li:hover .n,.indice li:focus-visible .n,.indice li.ativo .n{color:var(--papel)}
+.faixa-cta{grid-column:1/13;margin-top:104px;padding:40px 0 44px;border-top:1px solid var(--paranoa);display:flex;justify-content:space-between;align-items:center;gap:32px}
+.faixa-cta p{font-size:clamp(22px,2.2vw,30px);line-height:1.25;letter-spacing:.03em;text-transform:uppercase;max-width:22em}
+.fonte-l{grid-column:1/13;margin-top:0}
+
+/* 04 */
+.lead{font-size:clamp(24px,2.3vw,32px);line-height:1.35;margin-bottom:22px}
+.fluxo{margin-top:48px;display:grid;grid-template-columns:1fr 150px 1fr;column-gap:20px;align-items:end;row-gap:22px;border-top:1px solid var(--marinho);padding-top:22px}
+.fluxo div{display:flex;flex-direction:column;gap:8px}
+.fluxo .rot{color:var(--paranoa)}
+.fluxo b{font-size:22px;letter-spacing:.03em;text-transform:uppercase;line-height:1.1}
+.fluxo .seta{align-self:center;position:relative;height:1px;background:var(--marinho)}
+.fluxo .seta:after{content:'';position:absolute;right:0;top:-4px;border-left:8px solid var(--marinho);border-top:4.5px solid transparent;border-bottom:4.5px solid transparent}
+.fluxo .seta span{position:absolute;top:-20px;left:0;right:0;text-align:center;font:500 9px/1 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--paranoa);white-space:nowrap}
+.fluxo .volta{grid-column:1/4;border-top:1px solid var(--nevoa);padding-top:18px}
+
+/* 05 */
+.abas{margin-top:40px;border-top:1px solid var(--paranoa)}
+.abas button{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:56px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid rgba(213,218,221,.22);cursor:pointer;color:var(--nevoa);transition:color .2s}
+.abas button i{font-style:normal;font-size:20px;color:var(--paranoa);transition:color .2s}
+.abas button b{display:block;font:500 11px/1.4 Jost,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--papel);margin-bottom:6px}
+.abas button span{font-size:15px;line-height:1.55;opacity:.7}
+.abas button[aria-selected="true"]{color:var(--papel)}
+.abas button[aria-selected="true"] i{color:var(--papel)}
+.abas button[aria-selected="true"] span{opacity:1}
+.abas button:focus-visible{outline:1px solid var(--papel);outline-offset:4px}
+.folha{background:#FFFFFF;color:var(--marinho);padding:44px 48px 28px;min-height:560px;display:flex;flex-direction:column}
+.f-cab{display:flex;align-items:center;gap:12px;font:500 10px/1 Jost,sans-serif;letter-spacing:.22em;text-transform:uppercase;padding-bottom:16px;border-bottom:1px solid var(--nevoa);margin-bottom:30px}
+.f-cab img{height:20px}.f-cab em{margin-left:auto;font-style:normal;color:#6B6F72}
+.pg{display:none;flex-grow:1}.pg.on{display:block;animation:entra .4s ease}
+@keyframes entra{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.pg h3{font-size:24px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
+.f-sub{font:400 13px/1.5 Jost,sans-serif;color:#6B6F72;margin-bottom:22px}
+.f-tab{width:100%;border-collapse:collapse;font-size:14px}
+.f-tab th{text-align:left;font-weight:600;width:42%;padding:14px 12px 14px 0;vertical-align:top}
+.f-tab td{padding:14px 8px;vertical-align:top}
+.f-tab tr{border-top:1px solid var(--nevoa)}
+.selo{display:inline-block;font:500 9px/1 Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;background:var(--marinho);color:var(--papel);padding:6px 7px;white-space:nowrap}
+.selo.vazado{background:none;color:var(--marinho);border:1px solid var(--marinho)}
+.f-pt{display:grid;grid-template-columns:150px 1fr;row-gap:8px;padding:16px 0;border-top:1px solid var(--nevoa);font-size:14px}
+.f-pt b{grid-column:1/3;font:500 10px/1 Jost,sans-serif;letter-spacing:.22em;text-transform:uppercase;margin-bottom:4px}
+.f-pt dt{font-weight:600}.f-pt.mudo dd{color:#8B8F91;letter-spacing:.2em}
+.f-ck{list-style:none;font-size:15px}
+.f-ck li{position:relative;padding:14px 0 14px 32px;border-top:1px solid var(--nevoa)}
+.f-ck li:before{content:'';position:absolute;left:0;top:18px;width:14px;height:14px;border:1px solid var(--paranoa)}
+.f-cal{list-style:none;font-size:14px}
+.f-cal li{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:14px 0;border-top:1px solid var(--nevoa)}
+.f-cal b{font-size:17px;font-weight:500}
+.f-rod{display:flex;justify-content:space-between;margin-top:28px;padding-top:14px;border-top:1px solid var(--nevoa);font:500 9px/1 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#6B6F72}
+.aviso{margin-top:36px;border:1px solid var(--paranoa);padding:22px 26px;font-size:15px;line-height:1.65;color:var(--nevoa);text-align:justify;hyphens:auto}
+.aviso strong{color:var(--papel);font-weight:600}
+
+/* 06 */
+.pessoas{display:grid;grid-template-columns:1fr 1fr;column-gap:40px}
+.pessoas article{border-top:1px solid var(--marinho);padding-top:24px}
+.pessoas h3{font-size:22px;letter-spacing:.03em;text-transform:uppercase;line-height:1.15}
+.pessoas .rot{display:block;margin:12px 0 18px;color:var(--paranoa)}
+.pessoas .corpo{font-size:16px;text-align:left}
+
+/* 07 */
+.passos{list-style:none;border-top:1px solid var(--marinho)}
+.passos li{display:grid;grid-template-columns:110px 1fr;gap:24px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--nevoa)}
+.passos i{font-style:normal;font-size:44px;line-height:1;color:var(--paranoa)}
+.passos p{font-size:20px;line-height:1.45}
+
+/* 08 */
+.faq{border-top:1px solid var(--marinho)}
+.faq details{border-bottom:1px solid var(--nevoa)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;padding:24px 0;font-size:20px;letter-spacing:.03em;text-transform:uppercase;line-height:1.25}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:'+';font-family:Jost,sans-serif;font-size:22px;color:var(--paranoa);transition:transform .25s}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq summary:focus-visible{outline:1px solid var(--marinho);outline-offset:6px}
+.faq .corpo{padding:0 0 26px;max-width:36em}
+
+/* 09 */
+.fecha{background:var(--marinho);color:var(--papel)}
+.fecha-in{padding:136px 72px 120px;display:flex!important;flex-direction:column;align-items:flex-start;gap:44px}
+.fecha h2{font-size:clamp(34px,4.4vw,64px);line-height:1.06;letter-spacing:.03em;text-transform:uppercase;max-width:16em}
+.rodape{border-top:1px solid var(--paranoa);padding-top:28px!important;padding-bottom:40px!important;display:flex!important;justify-content:space-between;align-items:center;gap:24px}
+.rodape img{height:26px}
+.rodape p{font:400 12px/1.6 Jost,sans-serif;color:var(--nevoa);text-align:right}
+
+/* entrada ao rolar */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.pg.on{animation:none}}
+
+@media(max-width:900px){
+ .sec{padding:88px 0 80px}
+ .g{display:block;padding:0 24px}
+ .c-esq{margin-bottom:40px}.fixa{position:static}
+ .g-caso{padding-top:72px}
+ .marcos li{grid-template-columns:1fr;gap:6px}
+ .citacao{margin:36px 0 0}
+ .corpo,.aviso{text-align:left}
+ .faixa-cta{flex-direction:column;align-items:flex-start;margin-top:64px}
+ .fluxo{grid-template-columns:1fr;row-gap:16px}.fluxo .seta{height:28px;width:1px;justify-self:start;margin-left:12px}.fluxo .seta:after{right:-4px;top:auto;bottom:0;border-left:4.5px solid transparent;border-right:4.5px solid transparent;border-top:8px solid var(--marinho);border-bottom:0}.fluxo .seta span{top:6px;left:18px;text-align:left}.fluxo .volta{grid-column:1}
+ .folha{padding:28px 22px 20px;min-height:0}
+ .f-tab th{width:auto}.f-pt{grid-template-columns:1fr}
+ .pessoas{grid-template-columns:1fr;row-gap:40px}
+ .passos li{grid-template-columns:64px 1fr}.passos i{font-size:32px}
+ .fecha-in{padding:88px 24px 72px}
+ .rodape{flex-direction:column;align-items:flex-start}.rodape p{text-align:left}
+}
+
+/* ===== calendário (02) ===== */
+.cal{margin-top:34px}
+.cal-meses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-top:1px solid var(--marinho);padding-top:22px}
+.mes h4{font:500 11px/1 Jost,sans-serif;letter-spacing:.24em;text-transform:uppercase;margin-bottom:14px;display:flex;justify-content:space-between}
+.mes h4 span{color:#8B8F91}
+.sem,.dias{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));text-align:center}
+.sem span{font:500 9px/1 Jost,sans-serif;letter-spacing:.14em;color:#8B8F91;padding-bottom:8px}
+.dias span,.dias button{all:unset;box-sizing:border-box;aspect-ratio:1;display:grid;place-items:center;font:400 12px/1 Jost,sans-serif;font-variant-numeric:tabular-nums;color:var(--marinho);position:relative}
+.dias .jan{background:var(--nevoa);transform:scale(.88);opacity:0;transition:opacity .35s,transform .35s}
+.dias .jan.on{opacity:1;transform:scale(1)}
+.dias .depois-nfse{background:rgba(213,218,221,.45)}
+.dias .hoje{outline:1px solid var(--marinho);outline-offset:-1px;font-weight:600}
+.dias button.ev{background:var(--marinho);color:var(--papel);font-weight:600;cursor:pointer}
+.dias button.ev[aria-pressed="true"]{outline:1px solid var(--marinho);outline-offset:3px}
+.dias button.ev:focus-visible{outline:2px solid var(--paranoa);outline-offset:3px}
+.vazio{visibility:hidden}
+.cal-leg{display:flex;gap:22px;margin-top:20px;font:500 9.5px/1 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--paranoa)}
+.cal-leg span{display:flex;align-items:center;gap:8px}
+.lg{width:11px;height:11px;display:inline-block}.lg.hoje{outline:1px solid var(--marinho);outline-offset:-1px}.lg.lg-p{background:var(--marinho)}.lg.lg-c{background:rgba(213,218,221,.45)}.lg.jan{background:var(--nevoa)}
+.cal-det{margin-top:24px;border-top:1px solid var(--nevoa);padding-top:18px;display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:baseline;min-height:72px}
+.cal-det .bod{font-size:24px;line-height:1.1}
+.cal-det b{display:block;font:500 11px/1.4 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px}
+.cal-det p{font-size:16px;line-height:1.5;color:var(--paranoa)}
+.cal-depois{margin-top:18px;padding-top:16px;border-top:1px solid var(--nevoa);font-size:15px;color:var(--paranoa)}
+.cal-depois b{font-size:17px;color:var(--marinho);margin-right:6px}
+.cal-depois b+b,.cal-depois b:nth-of-type(2){margin-left:14px}
+
+@media(max-width:900px){
+ .cal-meses{grid-template-columns:1fr;gap:28px}
+ .cal-det{grid-template-columns:1fr;gap:6px}
+ .cal-leg{flex-wrap:wrap;gap:14px}
+}
+
+/* 02 mais limpa */
+#agora .citacao{margin:44px 0 0;padding-left:22px;border-left:1px solid var(--marinho);font-size:20px;max-width:20em}
+.cal-det{grid-template-columns:auto 1fr;gap:24px;align-items:center;border-top:1px solid var(--marinho);padding-top:22px;margin-top:22px}
+.cal-det .cnt{font-size:72px;line-height:.9}
+.cal-det b{font-size:11px}
+.cal-leg{margin-top:16px}
+#agora .fonte{margin-top:28px}
+
+/* ===== diagrama do ecossistema (03) · largura total ===== */
+.g-ind{margin-top:96px}
+.eco{grid-column:1/13;margin-top:72px;border-top:1px solid var(--papel);padding-top:22px}
+.eco-topo{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.eco-tit{font:500 11px/1 Jost,sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--nevoa)}
+.eco-tog{display:inline-flex;border:1px solid rgba(213,218,221,.5)}
+.eco-tog button{all:unset;cursor:pointer;font:500 11px/1 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;padding:13px 18px;color:var(--nevoa);transition:background .3s,color .3s}
+.eco-tog button[aria-checked="true"]{background:var(--papel);color:var(--marinho)}
+.eco-tog button:focus-visible{outline:1px solid var(--papel);outline-offset:3px}
+.eco-leg{margin-top:18px;font-size:18px;line-height:1.5;color:var(--nevoa);min-height:1.5em}
+.eco-palco{position:relative;margin-top:40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.7fr) minmax(0,1.1fr) minmax(0,.7fr) minmax(0,1fr);grid-template-rows:auto auto auto;grid-template-areas:". . cond . ." "loj . adm . emp" ". . ass . .";row-gap:48px;align-items:center}
+.eco-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.eco-svg .ln{fill:none;stroke:rgba(213,218,221,.32);stroke-width:1.2;transition:stroke .3s,opacity .3s}
+.eco-svg .ln.trac{stroke-dasharray:5 6}
+.eco-svg .gr{fill:none;stroke:var(--papel);stroke-width:3;stroke-linecap:butt;opacity:0}
+.eco-svg .gr.trac{stroke-width:2.4}
+.eco.foco .g-f:not(.on) .gr{opacity:0!important}
+.eco-svg .rot-ln{font:500 10px Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;fill:var(--nevoa)}
+.eco-svg .g-f{transition:opacity .3s}
+.eco.foco .g-f{opacity:.15}
+.eco.foco .g-f.on{opacity:1}
+.eco.foco .g-f.on .ln{stroke:var(--papel)}
+.no{all:unset;box-sizing:border-box;min-width:0;position:relative;z-index:1;display:flex;flex-direction:column;gap:8px;padding:18px 18px 18px 20px;background:var(--marinho);border:1px solid rgba(213,218,221,.4);cursor:pointer;transition:background .3s,border-color .3s,opacity .3s,color .3s}
+.no b{hyphens:auto;font-size:clamp(15px,1.35vw,20px);line-height:1.1;letter-spacing:.03em;text-transform:uppercase;color:var(--papel)}
+.no span{font:400 13px/1.45 Jost,sans-serif;color:var(--nevoa);opacity:.8}
+.no .dep{display:none;font:500 9.5px/1.3 Jost,sans-serif;font-style:normal;letter-spacing:.16em;text-transform:uppercase;background:var(--papel);color:var(--marinho);padding:6px 8px;align-self:flex-start}
+.eco[data-modo="depois"] .no .dep{display:block;animation:entra .4s ease}
+.no:hover,.no:focus-visible,.no.on{border-color:var(--papel);background:#26394C}
+.no:focus-visible{outline:1px solid var(--papel);outline-offset:4px}
+.eco.foco .no:not(.on){opacity:.35}
+.eco-fluxos{list-style:none;margin-top:48px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px;border-top:1px solid rgba(213,218,221,.22)}
+.eco-fluxos li{display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid rgba(213,218,221,.22);cursor:default;transition:opacity .3s}
+.eco-fluxos .lin{height:1px;background:var(--nevoa)}
+.eco-fluxos .lin.trac{background:repeating-linear-gradient(90deg,var(--nevoa) 0 5px,transparent 5px 11px)}
+.eco-fluxos b{display:block;font:500 10.5px/1.5 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--papel)}
+.eco-fluxos span{font-size:14px;line-height:1.45;color:var(--nevoa)}
+.eco-fluxos .dep{display:none;font:500 9px/1.3 Jost,sans-serif;font-style:normal;letter-spacing:.14em;text-transform:uppercase;background:var(--papel);color:var(--marinho);padding:6px 8px;white-space:nowrap;justify-self:end}
+.eco[data-modo="depois"] .eco-fluxos .dep{display:block}
+.eco-fluxos .dep-li{display:none}
+.eco[data-modo="depois"] .eco-fluxos .dep-li{display:grid}
+.eco.foco .eco-fluxos li:not(.on){opacity:.35}
+@media(max-width:900px){
+ .eco-palco{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"loj loj" "cond ass" "adm adm" "emp emp";row-gap:52px;column-gap:44px}
+ .no{padding:10px 8px;gap:6px}
+ .no b{font-size:12px}
+ .no span{font-size:10.5px}
+ .no .dep{font-size:8px;letter-spacing:.08em}
+ .eco-fluxos{grid-template-columns:1fr}
+ .eco-fluxos li{grid-template-columns:28px 1fr}
+ .eco-fluxos .dep{grid-column:2;justify-self:start;white-space:normal}
+ .eco-svg .rot-ln{display:none}
+}
+
+.eco-svg .ln.inf{stroke-dasharray:2 5;stroke:rgba(213,218,221,.28)}
+.eco-svg .gr.inf{stroke-width:1.6;stroke-dasharray:none}
+.eco-svg .gr.trac{stroke-width:3}
+.eco-svg .ln.trac{stroke:rgba(245,244,240,.55)}
+/* depois: os vínculos que mudam com a reforma ficam encorpados em Papel */
+.eco-svg .g-f.muda .ln{stroke:rgba(245,244,240,.85);stroke-width:1.8}
+
+/* lista de fluxos: uma coluna, alinhada como tabela */
+.eco-fluxos{grid-template-columns:1fr!important}
+.eco-fluxos li{grid-template-columns:48px minmax(0,1fr) auto!important;gap:24px!important;padding:18px 0!important}
+.eco-fluxos li>span{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:24px;align-items:baseline}
+.eco-fluxos li>span b{margin:0}
+.eco-fluxos .dep{min-width:0}
+@media(max-width:900px){
+ .eco-fluxos li{grid-template-columns:28px minmax(0,1fr)!important;gap:14px!important}
+ .eco-fluxos li>span{grid-template-columns:1fr;gap:4px}
+}
+
+/* 8 fontes: grade 4 x 2 */
+.fontes{grid-column:1/13;border-top:1px solid var(--paranoa);padding-top:22px}
+.f-rot{font:500 11px/1 Jost,sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--nevoa);margin-bottom:8px}
+.f-lista{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:32px}
+.f-lista li{display:flex;align-items:baseline;gap:14px;padding:22px 0;border-bottom:1px solid rgba(213,218,221,.22)}
+.f-lista i{font:500 11px/1 ui-monospace,'SF Mono',Menlo,monospace;font-style:normal;letter-spacing:.06em;color:var(--paranoa)}
+.f-lista span{font-size:clamp(15px,1.3vw,19px);white-space:nowrap;letter-spacing:.03em;text-transform:uppercase;line-height:1.15}
+@media(max-width:900px){.f-lista{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px}.f-lista span{font-size:14px;white-space:normal}}
+
+/* fechamento da seção 03: um bloco só, sem filete duplo */
+#caso .faixa-cta{margin-top:56px;border-top:0;padding:0;align-items:center}
+#caso .faixa-cta p{max-width:none;text-wrap:balance}
+#caso .fonte-l{margin-top:20px}
+#caso{padding-bottom:104px}
+@media(max-width:900px){#caso .faixa-cta{margin-top:40px}}
+
+/* 04 sem esquema: afirmação limpa */
+#oportunidade{padding:120px 0 112px}
+#oportunidade .c-esq{grid-column:1/7}
+#oportunidade .c-dir{grid-column:7/13;padding-top:62px}
+#oportunidade .lead{margin-bottom:24px}
+#oportunidade .corpo{text-align:left;color:var(--paranoa);max-width:30em}
+
+/* nota horizontal nas duas colunas */
+.aviso-h{grid-column:1/13;margin-top:56px;border-top:1px solid var(--paranoa);border-bottom:1px solid var(--paranoa);padding:26px 0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:32px;align-items:baseline}
+.aviso-rot{font:500 11px/1.4 Jost,sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--papel)}
+.aviso-h p{font-size:17px;line-height:1.65;color:var(--nevoa);margin:0}
+@media(max-width:900px){.aviso-h{grid-template-columns:1fr;row-gap:12px;margin-top:40px}}
+
+/* 06 · autoria: dois cartões iguais com foto */
+.aut-cab{grid-column:1/13;margin-bottom:48px}
+.pessoas2{grid-column:1/13;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px}
+.pessoas2 article{display:grid;grid-template-columns:200px minmax(0,1fr);column-gap:28px;border-top:1px solid var(--marinho);padding-top:28px;align-items:start}
+.pessoas2 img{width:200px;aspect-ratio:3/4;object-fit:cover;filter:grayscale(1) contrast(1.02);display:block}
+.pessoas2 h3{font-size:22px;letter-spacing:.03em;text-transform:uppercase;line-height:1.15;min-height:2.3em}
+.pessoas2 .rot{display:block;margin:10px 0 18px;color:var(--paranoa);min-height:3em}
+.pessoas2 .corpo{font-size:16px;text-align:left}
+@media(max-width:1100px){.pessoas2 article{grid-template-columns:140px minmax(0,1fr)}.pessoas2 img{width:140px}}
+@media(max-width:900px){.pessoas2{grid-template-columns:1fr;row-gap:40px}.pessoas2 h3,.pessoas2 .rot{min-height:0}}
+
+/* ===== formulário ===== */
+#formulario [hidden]{display:none!important}
+.f-tempo{margin-top:20px;font:500 11px/1.5 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--paranoa)}
+.f-prog{display:flex;align-items:center;gap:18px;margin-bottom:34px;font:500 12px/1 ui-monospace,'SF Mono',Menlo,monospace;letter-spacing:.08em;color:var(--paranoa)}
+.f-prog i{flex:1;height:1px;background:var(--nevoa);position:relative}
+.f-prog b{position:absolute;left:0;top:-1px;height:3px;background:var(--marinho);width:11%;transition:width .4s ease}
+.fp{border:0;padding:0;margin:0;min-width:0}
+.fp:not([hidden]){animation:entra .4s ease}
+.fq{font-size:clamp(22px,2.1vw,28px);line-height:1.35;margin-bottom:30px;padding:0}
+.fl{display:block;font:500 10px/1 Jost,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--paranoa);margin-bottom:10px}
+.fp textarea,.fp input:not([type=checkbox]){width:100%;box-sizing:border-box;border:0;border-bottom:1px solid var(--marinho);background:transparent;font:400 18px/1.55 'Source Serif 4',Georgia,serif;color:var(--marinho);padding:8px 0 12px;resize:vertical;outline:none;border-radius:0}
+.fp textarea:focus,.fp input:not([type=checkbox]):focus{border-bottom-width:2px;padding-bottom:11px}
+.fp textarea:disabled{opacity:.35}
+.fc{display:grid;grid-template-columns:1fr 1fr;column-gap:28px;row-gap:6px}
+.fc .fl{margin-top:18px}
+.fc label:nth-of-type(odd){grid-column:1}.fc label:nth-of-type(even){grid-column:2}
+.fc input:nth-of-type(odd){grid-column:1}.fc input:nth-of-type(even){grid-column:2}
+.fc{grid-auto-flow:dense}
+.fns{display:flex;align-items:center;gap:12px;margin-top:20px;font:500 11px/1.4 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--marinho);cursor:pointer}
+.fns input{appearance:none;-webkit-appearance:none;width:18px;height:18px;flex:none;border:1px solid var(--marinho);margin:0;display:grid;place-items:center;cursor:pointer}
+.fns input:checked{background:var(--marinho)}
+.fns input:checked:after{content:'';width:8px;height:8px;background:var(--papel)}
+.fns input:focus-visible{outline:2px solid var(--paranoa);outline-offset:3px}
+.fcons{text-transform:none;letter-spacing:.02em;font:400 14px/1.5 'Source Serif 4',Georgia,serif;margin-top:32px;align-items:flex-start}
+.fcons input{margin-top:2px}
+.fcons a{color:var(--marinho)}
+.f-erro{min-height:1.4em;margin-top:18px;font:500 12px/1.4 Jost,sans-serif;color:#8A2C2C}
+.f-nav{display:flex;align-items:center;gap:28px;margin-top:12px}
+.btn.escuro{background:var(--marinho);color:var(--papel);border:0;cursor:pointer}
+.btn.escuro:hover{background:var(--paranoa)}
+.btn.escuro:disabled{opacity:.5;cursor:wait}
+.f-volta{all:unset;cursor:pointer;font:500 12px/1 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--marinho);padding-bottom:5px;border-bottom:1px solid var(--marinho)}
+.f-volta:focus-visible,.btn.escuro:focus-visible{outline:2px solid var(--paranoa);outline-offset:4px}
+.f-ok{border-top:1px solid var(--marinho);padding-top:28px;outline:none}
+.f-ok .bod{font-size:clamp(26px,2.6vw,36px);letter-spacing:.03em;text-transform:uppercase;line-height:1.1;margin:6px 0 18px}
+@media(max-width:900px){.fc{grid-template-columns:1fr}.fc label,.fc input{grid-column:1!important}}
+
+/* formulário v2: blocos com opções */
+.fbl{font:500 11px/1 Jost,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--paranoa);padding:0;margin-bottom:10px}
+.fbl em{font-style:normal;color:#8B8F91;margin-left:8px}
+.fq-item{padding:22px 0;border-bottom:1px solid var(--nevoa)}
+.fq-item.falta .fq-t{color:#8A2C2C}
+.fq-t{font-size:18px;line-height:1.45;margin-bottom:14px;display:grid;grid-template-columns:34px 1fr}
+.fq-t i{font:500 11px/1.9 ui-monospace,'SF Mono',Menlo,monospace;font-style:normal;color:var(--paranoa)}
+.fq-ops{display:flex;flex-wrap:wrap;gap:8px;padding-left:34px}
+.fq-ops label{position:relative;cursor:pointer}
+.fq-ops input{position:absolute;opacity:0;pointer-events:none}
+.fq-ops span{display:inline-block;font:500 11px/1 Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:12px 14px;border:1px solid rgba(28,43,58,.35);color:var(--marinho);transition:background .2s,color .2s,border-color .2s}
+.fq-ops label:hover span{border-color:var(--marinho)}
+.fq-ops input:checked+span{background:var(--marinho);border-color:var(--marinho);color:var(--papel)}
+.fq-ops input:focus-visible+span{outline:2px solid var(--paranoa);outline-offset:2px}
+#fNota textarea{width:100%;box-sizing:border-box;border:0;border-bottom:1px solid var(--marinho);background:transparent;font:400 18px/1.55 'Source Serif 4',Georgia,serif;color:var(--marinho);padding:8px 0 12px;resize:vertical;outline:none;border-radius:0}
+#t_c1{margin-top:18px}
+.f-voz{margin-top:30px}
+.f-voz-ctl{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.f-rec{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font:500 11px/1 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;padding:13px 16px;border:1px solid var(--marinho);color:var(--marinho)}
+.f-rec i{width:10px;height:10px;border-radius:50%;background:var(--marinho)}
+.f-rec[aria-pressed="true"]{background:var(--marinho);color:var(--papel)}
+.f-rec[aria-pressed="true"] i{background:var(--papel);animation:recpisca 1.2s steps(1) infinite}
+.f-rec:focus-visible{outline:2px solid var(--paranoa);outline-offset:3px}
+.f-tempo-rec{font:500 12px/1 ui-monospace,'SF Mono',Menlo,monospace;color:var(--paranoa)}
+#fAud{height:36px;max-width:100%}
+.f-voz-aviso{margin-top:10px;font:400 13px/1.5 Jost,sans-serif;color:var(--paranoa)}
+@media(max-width:900px){.fq-ops{padding-left:0}.fq-t{grid-template-columns:28px 1fr;font-size:17px}}
+/* calculadora do lojista */
+#calculadora .corpo{margin-top:6px}
+.cz .fc{margin-bottom:18px}
+.cz .fc .fl{line-height:1.4}
+.cz-em{font:500 10px/1 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;font-style:normal;color:#6B6F72;margin-left:10px}
+.cz-serv{padding:18px 0 0 34px}
+.cz-serv .fl{margin-top:14px}
+.cz-ops0{padding-left:0;margin-bottom:6px}
+.cz-res{margin-top:44px;border-top:1px solid var(--marinho);padding-top:28px;outline:none}
+.cz-tit{font-size:clamp(26px,2.6vw,36px);letter-spacing:.03em;text-transform:uppercase;line-height:1.1;margin:4px 0 26px}
+.cz-reg{position:relative;height:44px}
+.cz-cel{display:grid;grid-template-columns:repeat(36,1fr);gap:2px;height:100%}
+.cz-cel i{background:var(--marinho);opacity:.06;transition:opacity .7s ease}
+.cz-mk{position:absolute;top:-8px;bottom:-8px;width:2px;background:var(--marinho);left:0;transition:left .7s cubic-bezier(.2,.7,.2,1)}
+.cz-mk:after{content:'';position:absolute;top:-6px;left:-4px;width:10px;height:10px;background:var(--marinho)}
+.cz-zon{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px;font:500 10px/1.3 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--paranoa)}
+.cz-zon span:nth-child(2),.cz-zon span:nth-child(3){text-align:center}.cz-zon span:nth-child(4){text-align:right}
+.cz-reg:before{content:'';position:absolute;inset:-8px 0;background:linear-gradient(90deg,transparent calc(25% - .5px),rgba(28,43,58,.35) calc(25% - .5px) calc(25% + .5px),transparent calc(25% + .5px) calc(50% - .5px),rgba(28,43,58,.35) calc(50% - .5px) calc(50% + .5px),transparent calc(50% + .5px) calc(75% - .5px),rgba(28,43,58,.35) calc(75% - .5px) calc(75% + .5px),transparent calc(75% + .5px));pointer-events:none}
+.cz-recs{padding:22px 0 0 34px}.cz-rt{margin-bottom:4px}.cz-rec .fl{margin-top:16px}
+.cz-tot{font:500 11px/1.4 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--paranoa);margin-top:14px}
+.cz-num{margin-top:26px}
+.cz-sin{list-style:none;margin:30px 0 0;font-size:16px;line-height:1.5}
+.cz-sin li{display:grid;grid-template-columns:26px 1fr;gap:6px;padding:14px 0;border-top:1px solid rgba(28,43,58,.2);text-align:justify;hyphens:auto}
+.cz-sin li b{font:500 13px/1.5 Jost,sans-serif;color:var(--paranoa)}
+.cz-sin small{display:block;font:400 12px/1.5 Jost,sans-serif;color:var(--paranoa);margin-top:4px;text-align:left}
+.cz-nota{font:400 13px/1.55 Jost,sans-serif;color:var(--paranoa);margin:24px 0 26px;text-align:justify}
+@media(max-width:900px){.cz-serv,.cz-recs{padding-left:0}.cz-zon{font-size:9px;letter-spacing:.12em}}
+.b-btns{display:flex;flex-wrap:wrap;gap:12px;align-self:flex-start}
+.b-dir .btn-calc{background:transparent;color:var(--papel);border:1px solid var(--papel)}
+.b-dir .btn-calc:hover{background:rgba(245,244,240,.12)}
+.topo .btn-calc{margin-right:-28px;background:transparent}
+.topo.solido .btn-calc{background:transparent;color:var(--marinho);border-color:var(--marinho)}
+@media(max-width:900px){.topo .btn-calc{display:none}}
+
+/* calculadora: campos compactos */
+#calculadora .fq-item{padding:18px 0}
+.cz-g{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;padding-left:34px}
+.cz-recs .cz-g{padding-left:0}
+.cz-recs{padding:18px 0 0 34px}
+.cz-rt{font:500 10px/1 Jost,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--paranoa);margin-bottom:12px}
+.cz-f{display:flex;flex-direction:column;gap:6px}
+.cz-f[hidden]{display:none}
+.cz-l{font:500 10px/1.35 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--paranoa);min-height:2.7em;display:flex;align-items:flex-end}
+.cz-recs .cz-l{min-height:0}
+.cz-m{display:flex;align-items:center;border:1px solid rgba(28,43,58,.4);background:var(--papel);padding:0 12px;height:46px;transition:border-color .2s}
+.cz-m:focus-within{border-color:var(--marinho);box-shadow:inset 0 0 0 1px var(--marinho)}
+.cz-m span{font:500 13px/1 Jost,sans-serif;color:var(--paranoa);flex:none}
+.fp .cz-m input.cz-in{border:0;padding:0 4px 0 8px;margin:0;height:100%;font:400 17px/1 'Source Serif 4',Georgia,serif;text-align:right;background:transparent;min-width:0;flex:1}
+.fp .cz-m input.cz-in:focus{border:0;padding:0 4px 0 8px}
+.cz-m.off{opacity:.4}
+.cz-na{display:flex;align-items:center;gap:8px;cursor:pointer;font:500 10px/1 Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--marinho)}
+.cz-na input{appearance:none;-webkit-appearance:none;width:14px;height:14px;border:1px solid var(--marinho);margin:0;display:grid;place-items:center;cursor:pointer;flex:none}
+.cz-na input:checked{background:var(--marinho)}
+.cz-na input:checked:after{content:'';width:6px;height:6px;background:var(--papel)}
+.cz-ast{color:#8A2C2C;margin-left:2px}
+.cz-tot{margin-top:12px}
+.cz-serv{padding-top:14px}
+.cz-serv .cz-ops0+label{margin-top:12px}
+@media(max-width:900px){.cz-g{grid-template-columns:1fr;padding-left:0}.cz-l{min-height:0}}
+.cz-rac-b{margin-top:30px}
+.cz-rac-b:after{content:' +';}
+.cz-rac-b[aria-expanded=true]:after{content:' −'}
+.cz-rac{animation:czIn .35s ease}
+@keyframes czIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.cz-res>a.f-volta{display:table;margin-top:28px}
+</style>
+</head>
+<body>
+
+<header class="topo" id="topo">
+<div class="topo-in">
+<a class="topo-logo" href="#hero" aria-label="Moreira Oliveira Advocacia, início"><img class="l-neg" src="img/Logo_Horizontal_Negativa_Papel.svg" alt=""><img class="l-pos" src="img/Logo_Horizontal_Marinho.svg" alt=""></a>
+<nav aria-label="Seções"><a href="#agora">Por que agora</a><a href="#caso">O caso do shopping</a><a href="#nota">A nota</a></nav>
+<a class="btn btn-calc" href="#calculadora">Calculadora do lojista</a>
+<a class="btn" href="#formulario">Gerar a nota técnica</a>
+</div>
+</header>
+
+<section class="hero" id="hero" data-vistoria-hero data-poster="img/capa.jpg">
+<div class="b">
+<div class="b-grade">
+<h1 class="bod">Vitrine<br>tributária</h1>
+<div class="b-dir">
+<p class="linha">Veja o que o seu shopping precisa olhar antes de 2027.</p>
+<p class="sub">Res&shy;pon&shy;da a al&shy;gu&shy;mas per&shy;gun&shy;tas sobre a sua ope&shy;ra&shy;ção e re&shy;ce&shy;ba uma Nota Téc&shy;ni&shy;ca Pre&shy;li&shy;mi&shy;nar com o mapa das re&shy;la&shy;ções afe&shy;ta&shy;das e os pon&shy;tos de aten&shy;ção.</p>
+<div class="b-btns"><a class="btn" href="#formulario">Gerar a nota técnica</a><a class="btn btn-calc" href="#calculadora">Calculadora do lojista</a></div>
+</div>
+</div>
+<div class="datas osd">
+<span><b>CAM 01</b>&nbsp;&nbsp;01.12.2026<br>NFS-E OBRIGATÓRIA</span>
+<span><b>CAM 02</b>&nbsp;&nbsp;01.01.2027<br>COMEÇA A CBS</span>
+<span><b>CAM 03</b>&nbsp;&nbsp;2029–2032<br>ICMS E ISS CEDEM AO IBS</span>
+<span class="rec" aria-hidden="true"><i></i>REC&nbsp;&nbsp;<em id="tc">00:00:00:00</em></span>
+</div>
+</div>
+</section>
+
+
+<!-- 02 · Por que agora -->
+<section class="sec papel" id="agora">
+<div class="g">
+<div class="c-esq rv">
+<span class="num">02 · Por que agora</span>
+<div class="ano bod" aria-hidden="true">2027:</div>
+<h2 class="bod">O calendário já começou.</h2>
+<p class="citacao">Durante a transição, contratos e preços vão funcionar em dois sistemas ao mesmo tempo.</p>
+</div>
+<div class="c-dir rv">
+<div class="cal" id="cal">
+<div class="cal-meses" id="calMeses" aria-label="Calendário da transição"></div>
+<div class="cal-leg" aria-hidden="true"><span><i class="lg hoje"></i>Hoje</span><span><i class="lg lg-p"></i>Prazo</span></div>
+<div class="cal-det" id="calDet" aria-live="polite"></div>
+</div>
+<p class="fonte">Fontes: Ato Conjunto RFB/CGIBS nº 4/2026, art. 1º, III, "f" e "g"; Constituição Federal, ADCT, arts. 126 a 128.</p>
+</div>
+</div>
+</section>
+
+<!-- 03 · O caso do shopping -->
+<section class="sec marinho" id="caso">
+<div class="trama" aria-hidden="true"></div>
+<div class="g g-caso">
+<div class="c-esq rv">
+<span class="num">03 · O caso do shopping</span>
+<h2 class="bod">Por que shopping é um caso à parte.</h2>
+</div>
+<div class="c-dir rv">
+<p class="corpo">Na reforma tributária, cada fonte de receita do shopping terá tratamento tributário próprio. A locação tem alíquota reduzida em 70% (setenta por cento), a administração em 50% (cinquenta por cento), e o condomínio pode optar pelo regime regular.</p>
+</div>
+</div>
+
+<div class="g">
+<div class="eco rv" id="eco" data-modo="antes">
+<div class="eco-topo">
+<span class="eco-tit">Quem paga a quem</span>
+<div class="eco-tog" role="radiogroup" aria-label="Momento">
+<button role="radio" aria-checked="true" data-m="antes">Antes da reforma</button>
+<button role="radio" aria-checked="false" data-m="depois">Depois da reforma</button>
+</div>
+</div>
+<p class="eco-leg" id="ecoLeg">As relações do shopping hoje, todas acontecendo ao mesmo tempo.</p>
+<div class="eco-palco" id="ecoPalco">
+<svg class="eco-svg" id="ecoSvg" aria-hidden="true"></svg>
+<button class="no" data-n="loj" style="grid-area:loj"><b class="bod">Lojistas</b><span>âncoras, megalojas, satélites, quiosques e mall</span><em class="dep">Regime regular: direito a crédito</em></button>
+<button class="no" data-n="cond" style="grid-area:cond"><b class="bod">Condomínio</b><span>rateio das despesas comuns</span><em class="dep">Pode optar pelo regime regular</em></button>
+<button class="no" data-n="adm" style="grid-area:adm"><b class="bod">Administradora</b><span>comercialização, cobrança, repasse e gestão</span><em class="dep">Administração: redução de 50%</em></button>
+<button class="no" data-n="ass" style="grid-area:ass"><b class="bod">Associação de lojistas</b></button>
+<button class="no" data-n="emp" style="grid-area:emp"><b class="bod">Empreendedores</b><span>SPE, condomínio pro indiviso, condomínio edilício, FII</span></button>
+</div>
+<ul class="eco-fluxos" id="ecoFluxos">
+<li data-f="0"><i class="lin"></i><span><b>Aluguel, faturamento e taxas</b>Lojistas → Administradora</span><em class="dep">Locação: redução de 70%</em></li>
+<li data-f="1"><i class="lin"></i><span><b>Rateio</b>Lojistas → Condomínio</span><em class="dep">Condomínio: opção pelo regime regular</em></li>
+<li data-f="2"><i class="lin"></i><span><b>Contribuição</b>Lojistas → Associação de lojistas</span></li>
+<li data-f="3"><i class="lin"></i><span><b>Receitas líquidas</b>Administradora → Empreendedores</span></li>
+<li data-f="4" class="dep-li"><i class="lin trac"></i><span><b>Crédito</b>Lojista do regime regular, sobre o que paga ao shopping</span><em class="dep">Novo com a reforma</em></li>
+</ul>
+</div>
+</div>
+
+<div class="g">
+<div class="faixa-cta rv">
+<p class="bod">Mapear essas relações é o primeiro passo.</p>
+<a class="btn claro" href="#formulario">Gerar a nota técnica</a>
+</div>
+<p class="fonte fonte-l">Fontes: Lei Complementar nº 214/2025, arts. 26, 252 e 261.</p>
+</div>
+</section>
+
+<!-- 04 · Oportunidade -->
+<section class="sec papel" id="oportunidade">
+<div class="g">
+<div class="c-esq rv">
+<span class="num">04 · Oportunidade</span>
+<h2 class="bod">O crédito muda a conversa com o lojista.</h2>
+</div>
+<div class="c-dir rv">
+<p class="lead">Com a reforma, o lojista do regime regular passa a ter direito a crédito sobre o que paga ao shopping.</p>
+<p class="corpo">Bem estruturada, a operação pode tornar o empreendimento mais competitivo para atrair e manter lojistas.</p>
+
+</div>
+</div>
+</section>
+
+<!-- 05 · A nota -->
+<section class="sec marinho" id="nota">
+<div class="g">
+<div class="c-esq rv">
+<span class="num">05 · A nota técnica</span>
+<h2 class="bod">O que a nota técnica traz.</h2>
+<div class="abas" role="tablist" aria-label="Partes da nota técnica">
+<button role="tab" aria-selected="true" data-i="0"><i class="bod">01</i><span><b>Mapa da operação</b>As relações do shopping, com destaque para as que seguem regime específico.</span></button>
+<button role="tab" aria-selected="false" data-i="1"><i class="bod">02</i><span><b>Pontos de atenção</b>Cada um com a situação informada, o risco e o artigo de lei correspondente.</span></button>
+<button role="tab" aria-selected="false" data-i="2"><i class="bod">03</i><span><b>Perguntas para a contabilidade</b>O que vale levar à próxima reunião interna.</span></button>
+<button role="tab" aria-selected="false" data-i="3"><i class="bod">04</i><span><b>Calendário da transição</b>De 2026 a 2033.</span></button>
+</div>
+</div>
+<div class="c-dir rv">
+<div class="folha" role="tabpanel" aria-live="polite">
+<div class="f-cab"><img src="img/Monograma_Marinho.svg" alt=""><span>Nota Técnica Preliminar</span><em>Exemplo ilustrativo</em></div>
+
+<div class="pg on">
+<h3 class="bod">1. Mapa da operação</h3><p class="f-sub">Relações do shopping e o regime de cada uma.</p>
+<table class="f-tab"><tbody>
+<tr><th>Locação de ABL</th><td><span class="selo">Regime específico</span></td><td>redução de 70%</td></tr>
+<tr><th>Administração</th><td><span class="selo">Regime específico</span></td><td>redução de 50%</td></tr>
+<tr><th>Condomínio</th><td><span class="selo">Regime específico</span></td><td>opção pelo regime regular</td></tr>
+<tr><th>Res sperata, fundo de promoção, mídia, eventos, estacionamento, patrocínios e mall</th><td><span class="selo vazado">Tratamento próprio</span></td><td>mapeado por fonte de receita</td></tr>
+</tbody></table>
+</div>
+
+<div class="pg">
+<h3 class="bod">2. Pontos de atenção</h3><p class="f-sub">Cada ponto traz três campos.</p>
+<dl class="f-pt"><b>Ponto 1</b><dt>Situação informada</dt><dd>o que você respondeu no formulário</dd><dt>Risco</dt><dd>o que merece atenção naquela relação</dd><dt>Fundamento</dt><dd>o artigo de lei correspondente</dd></dl>
+<dl class="f-pt mudo"><b>Ponto 2</b><dt>Situação informada</dt><dd>·····</dd><dt>Risco</dt><dd>·····</dd><dt>Fundamento</dt><dd>·····</dd></dl>
+</div>
+
+<div class="pg">
+<h3 class="bod">3. Perguntas para a contabilidade</h3><p class="f-sub">Para levar à próxima reunião interna.</p>
+<ul class="f-ck">
+<li>Como emitir a NFS-e de locações, cessões de espaço e cobranças condominiais a partir de 1º/12/2026?</li>
+<li>Como o lojista do regime regular vai aproveitar o crédito sobre o que paga ao shopping?</li>
+<li>Como contratos e preços vão funcionar nos dois sistemas durante a transição?</li>
+</ul>
+</div>
+
+<div class="pg">
+<h3 class="bod">4. Calendário da transição</h3><p class="f-sub">De 2026 a 2033.</p>
+<ol class="f-cal">
+<li><b class="bod">1º/12/2026</b>NFS-e obrigatória para locações, cessões de espaço e cobranças condominiais</li>
+<li><b class="bod">1º/01/2027</b>Início da CBS; fim do PIS e da Cofins</li>
+<li><b class="bod">2029 a 2032</b>ICMS e ISS diminuem e o IBS aumenta</li>
+<li><b class="bod">2033</b>Fim do período de transição</li>
+</ol>
+</div>
+
+<div class="f-rod"><span>Brasília/DF</span><span>Documento de uso restrito</span><span id="fPag">1/4</span></div>
+</div>
+</div>
+</div>
+
+<div class="g">
+<div class="aviso-h rv"><span class="aviso-rot">O que ela não faz</span><p>A nota parte das respostas do formulário e de dados públicos. Ela mostra onde estão alguns dos pontos de atenção. A solução de cada um depende de um plano de ação definido a partir da consultoria individual.</p></div>
+</div>
+</section>
+
+<!-- 06 · Quem assina -->
+<section class="sec papel" id="autoria">
+<div class="g">
+<div class="aut-cab rv">
+<span class="num">06 · Autoria</span>
+<h2 class="bod">Quem assina.</h2>
+</div>
+<div class="pessoas2 rv">
+<article><img src="img/marco.jpg" alt="Marco Antônio M. Oliveira"><div><h3 class="bod">Marco Antônio M. Oliveira</h3><span class="rot">Advogado tributarista</span><p class="corpo">Há 15 anos atua em reestruturações tributárias e societárias. Há mais de dez anos presta consultoria institucional no Congresso Nacional e, desde 2019, participa da construção da reforma tributária sobre bens e serviços.</p></div></article>
+<article><img src="img/cibelle.webp" alt="Cibelle Ferreira"><div><h3 class="bod">Cibelle Ferreira</h3><span class="rot">Inovação e IA para shopping centers</span><p class="corpo">Atua no setor desde 2020. Integrou a banca avaliadora do Prêmio ABRASCE e desenvolveu o agente de IA do Enasuper 2025.</p></div></article>
+</div>
+</div>
+</section>
+
+<!-- 07 · Como funciona -->
+<section class="sec nevoa" id="como">
+<div class="g">
+<div class="c-esq rv">
+<span class="num">07 · Como funciona</span>
+<h2 class="bod">Três passos.</h2>
+</div>
+<ol class="c-dir passos rv">
+<li><i class="bod">01</i><p>Você responde ao formulário, com perguntas sobre a estrutura do shopping.</p></li>
+<li><i class="bod">02</i><p>A nota técnica é gerada.</p></li>
+<li><i class="bod">03</i><p>Você tem em mãos o mapa do seu shopping na reforma tributária e as perguntas certas para levar à contabilidade.</p></li>
+</ol>
+</div>
+</section>
+
+<!-- 08b · Formulário -->
+<section class="sec papel" id="formulario">
+<div class="g">
+<div class="c-esq rv">
+<span class="num">08 · Formulário</span>
+<h2 class="bod">Gerar a nota técnica do meu shopping.</h2>
+<p class="f-tempo">O mapeamento leva 3 minutos.</p>
+</div>
+<div class="c-dir rv">
+<form id="fNota" novalidate>
+<div class="f-prog"><span id="fN">01 / 04</span><i><b id="fBar"></b></i></div>
+
+<fieldset class="fp" data-p="0">
+<legend class="fbl">A · Estrutura do shopping</legend>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_p01"><p class="fq-t" id="t_p01"><i>01</i>Quantos proprietários (empreendedores) tem o shopping?</p><div class="fq-ops"><label><input type="radio" name="p01" value="1"><span>1</span></label><label><input type="radio" name="p01" value="2 a 4"><span>2 a 4</span></label><label><input type="radio" name="p01" value="5 ou mais"><span>5 ou mais</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_p02"><p class="fq-t" id="t_p02"><i>02</i>Há fundo imobiliário (FII) entre os proprietários?</p><div class="fq-ops"><label><input type="radio" name="p02" value="Sim"><span>Sim</span></label><label><input type="radio" name="p02" value="Não"><span>Não</span></label><label><input type="radio" name="p02" value="Não sei"><span>Não sei</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_p03"><p class="fq-t" id="t_p03"><i>03</i>Existe associação de lojistas?</p><div class="fq-ops"><label><input type="radio" name="p03" value="Sim"><span>Sim</span></label><label><input type="radio" name="p03" value="Não"><span>Não</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_p04"><p class="fq-t" id="t_p04"><i>04</i>Existe fundo de promoção?</p><div class="fq-ops"><label><input type="radio" name="p04" value="Sim"><span>Sim</span></label><label><input type="radio" name="p04" value="Não"><span>Não</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_p05"><p class="fq-t" id="t_p05"><i>05</i>Os contratos têm cobrança de res sperata?</p><div class="fq-ops"><label><input type="radio" name="p05" value="Sim"><span>Sim</span></label><label><input type="radio" name="p05" value="Não"><span>Não</span></label><label><input type="radio" name="p05" value="Não sei"><span>Não sei</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_p06"><p class="fq-t" id="t_p06"><i>06</i>Quem opera o estacionamento?</p><div class="fq-ops"><label><input type="radio" name="p06" value="Próprio shopping"><span>Próprio shopping</span></label><label><input type="radio" name="p06" value="Empresa contratada"><span>Empresa contratada</span></label><label><input type="radio" name="p06" value="Não há"><span>Não há</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_p07"><p class="fq-t" id="t_p07"><i>07</i>O shopping vende espaço de mídia (telas, painéis)?</p><div class="fq-ops"><label><input type="radio" name="p07" value="Sim"><span>Sim</span></label><label><input type="radio" name="p07" value="Não"><span>Não</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_p10"><p class="fq-t" id="t_p10"><i>08</i>Há contratos de locação firmados antes de 16/01/2025 e registrados até 31/12/2025?</p><div class="fq-ops"><label><input type="radio" name="p10" value="Sim"><span>Sim</span></label><label><input type="radio" name="p10" value="Não"><span>Não</span></label><label><input type="radio" name="p10" value="Não sei"><span>Não sei</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_p11"><p class="fq-t" id="t_p11"><i>09</i>O condomínio pretende optar pelo regime regular do IBS e da CBS?</p><div class="fq-ops"><label><input type="radio" name="p11" value="Sim"><span>Sim</span></label><label><input type="radio" name="p11" value="Não"><span>Não</span></label><label><input type="radio" name="p11" value="Não decidido"><span>Não decidido</span></label><label><input type="radio" name="p11" value="Não sei"><span>Não sei</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_p12"><p class="fq-t" id="t_p12"><i>10</i>Quem é o proprietário do imóvel?</p><div class="fq-ops"><label><input type="radio" name="p12" value="Pessoa física"><span>Pessoa física</span></label><label><input type="radio" name="p12" value="Pessoa jurídica"><span>Pessoa jurídica</span></label><label><input type="radio" name="p12" value="FII"><span>FII</span></label><label><input type="radio" name="p12" value="Misto"><span>Misto</span></label></div></div>
+</fieldset>
+
+<fieldset class="fp" data-p="1" hidden>
+<legend class="fbl">B · Como o shopping está acompanhando a reforma</legend>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_b1"><p class="fq-t" id="t_b1"><i>11</i>Quem acompanha a reforma hoje?</p><div class="fq-ops"><label><input type="radio" name="b1" value="Ninguém definido"><span>Ninguém definido</span></label><label><input type="radio" name="b1" value="Equipe interna"><span>Equipe interna</span></label><label><input type="radio" name="b1" value="Contabilidade externa"><span>Contabilidade externa</span></label><label><input type="radio" name="b1" value="Consultoria ou escritório"><span>Consultoria ou escritório</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_b2"><p class="fq-t" id="t_b2"><i>12</i>Já existe estudo de impacto da reforma no shopping?</p><div class="fq-ops"><label><input type="radio" name="b2" value="Não"><span>Não</span></label><label><input type="radio" name="b2" value="Em andamento"><span>Em andamento</span></label><label><input type="radio" name="b2" value="Concluído"><span>Concluído</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_b3"><p class="fq-t" id="t_b3"><i>13</i>Os proprietários já cobram um posicionamento?</p><div class="fq-ops"><label><input type="radio" name="b3" value="Não"><span>Não</span></label><label><input type="radio" name="b3" value="Já perguntaram"><span>Já perguntaram</span></label><label><input type="radio" name="b3" value="Já cobram"><span>Já cobram</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_b4"><p class="fq-t" id="t_b4"><i>14</i>A contabilidade é própria ou terceirizada?</p><div class="fq-ops"><label><input type="radio" name="b4" value="Própria"><span>Própria</span></label><label><input type="radio" name="b4" value="Terceirizada"><span>Terceirizada</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_b5"><p class="fq-t" id="t_b5"><i>15</i>A contabilidade já apresentou plano de adaptação?</p><div class="fq-ops"><label><input type="radio" name="b5" value="Não"><span>Não</span></label><label><input type="radio" name="b5" value="Em elaboração"><span>Em elaboração</span></label><label><input type="radio" name="b5" value="Sim"><span>Sim</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_b6"><p class="fq-t" id="t_b6"><i>16</i>Algum lojista já perguntou sobre aluguel, condomínio ou repasse?</p><div class="fq-ops"><label><input type="radio" name="b6" value="Sim"><span>Sim</span></label><label><input type="radio" name="b6" value="Não"><span>Não</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_b7"><p class="fq-t" id="t_b7"><i>17</i>Já foi estimado o efeito da CBS no caixa a partir de 2027?</p><div class="fq-ops"><label><input type="radio" name="b7" value="Não"><span>Não</span></label><label><input type="radio" name="b7" value="Em andamento"><span>Em andamento</span></label><label><input type="radio" name="b7" value="Sim"><span>Sim</span></label></div></div>
+<div class="fq-item" role="radiogroup" aria-labelledby="t_b8"><p class="fq-t" id="t_b8"><i>18</i>Os contratos com lojistas e fornecedores já foram revisados?</p><div class="fq-ops"><label><input type="radio" name="b8" value="Não"><span>Não</span></label><label><input type="radio" name="b8" value="Em parte"><span>Em parte</span></label><label><input type="radio" name="b8" value="Sim"><span>Sim</span></label></div></div>
+</fieldset>
+
+<fieldset class="fp" data-p="2" hidden>
+<legend class="fbl">C · Aberta <em>opcional</em></legend>
+<p class="fq-t" id="t_c1"><i>19</i>Qual é hoje a maior dúvida ou preocupação sobre a reforma?</p>
+<label class="fl" for="c1">Escreva</label>
+<textarea id="c1" name="c1" rows="3"></textarea>
+<div class="f-voz" id="fVoz">
+<span class="fl">Ou grave um áudio</span>
+<div class="f-voz-ctl">
+<button type="button" class="f-rec" id="fRec" aria-pressed="false"><i aria-hidden="true"></i><span>Gravar</span></button>
+<span class="f-tempo-rec" id="fRecT" aria-live="polite">00:00</span>
+<audio id="fAud" controls hidden></audio>
+<button type="button" class="f-volta" id="fRecDel" hidden>Apagar e regravar</button>
+</div>
+<p class="f-voz-aviso" id="fVozAv" hidden>Não foi possível usar o microfone neste navegador. Você pode escrever a resposta acima.</p>
+</div>
+</fieldset>
+
+<fieldset class="fp" data-p="3" hidden>
+<legend class="fbl">Para quem enviamos a nota?</legend>
+<div class="fc">
+<label class="fl" for="c_nome">Nome</label><input id="c_nome" name="nome" autocomplete="name" required>
+<label class="fl" for="c_cargo">Cargo</label><input id="c_cargo" name="cargo" autocomplete="organization-title">
+<label class="fl" for="c_email">E-mail</label><input id="c_email" name="email" type="email" autocomplete="email" required>
+<label class="fl" for="c_shop">Shopping</label><input id="c_shop" name="shopping" autocomplete="organization" required>
+</div>
+<label class="fns fcons"><input type="checkbox" name="consentimento" required><span>Autorizo o uso destes dados para a elaboração da minha Nota Técnica Preliminar, conforme a <a href="https://www.moreiraoliveira.adv.br/privacidade/" target="_blank" rel="noopener">Política de Privacidade</a>.</span></label>
+</fieldset>
+
+<p class="f-erro" id="fErro" role="alert"></p>
+<div class="f-nav">
+<button type="button" class="f-volta" id="fVolta" hidden>Voltar</button>
+<button type="button" class="btn escuro" id="fSegue">Continuar</button>
+<button type="submit" class="btn escuro" id="fEnvia" hidden>Gerar a nota técnica</button>
+</div>
+</form>
+<div class="f-ok" id="fOk" hidden tabindex="-1">
+<span class="num">Recebido</span>
+<p class="bod">Suas respostas foram enviadas.</p>
+<p class="corpo">A equipe técnica vai elaborar a sua Nota Técnica Preliminar e enviar para o e-mail informado.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 08 · Dúvidas -->
+<!-- 09 · Calculadora do lojista -->
+<section class="sec nevoa" id="calculadora">
+<div class="g">
+<div class="c-esq rv">
+<span class="num">09 · Calculadora do lojista</span>
+<h2 class="bod">Simples puro, híbrido ou fora do Simples.</h2>
+<p class="corpo">Para o lojista: com os dados da loja, a régua mostra para qual lado a operação pende em 2027.</p>
+</div>
+<div class="c-dir rv">
+<form id="fCalc" class="fp cz" novalidate>
+<div class="fq-item" aria-labelledby="t_katv"><p class="fq-t" id="t_katv"><i>01</i><span>Atividade <em class="cz-em">pode marcar mais de uma</em></span></p><div class="fq-ops"><label><input type="checkbox" name="katv" value="industria"><span>Indústria</span></label><label><input type="checkbox" name="katv" value="comercio"><span>Comércio</span></label><label><input type="checkbox" name="katv" value="servicos" id="k_serv"><span>Serviços</span></label></div>
+<div class="cz-serv" id="kServ" hidden>
+<p class="fl">Anexo do Simples Nacional dos serviços</p>
+<div class="fq-ops cz-ops0"><label><input type="radio" name="kanx" value="III"><span>Anexo III</span></label><label><input type="radio" name="kanx" value="IV"><span>Anexo IV</span></label><label><input type="radio" name="kanx" value="V"><span>Anexo V</span></label><label><input type="radio" name="kanx" value="nao_sei"><span>Não sei</span></label></div>
+<label class="fl" for="k_desc">Descreva a atividade de serviço</label><input id="k_desc" autocomplete="off">
+</div>
+<div class="cz-recs" id="kRecs" hidden>
+<p class="cz-rt">Receita dos últimos 12 meses, por atividade</p>
+<div class="cz-g"><div class="cz-f" data-a="industria" hidden><label class="cz-l" for="k_rec_industria">Indústria</label><div class="cz-m"><span>R$</span><input id="k_rec_industria" class="cz-in" inputmode="numeric" autocomplete="off" placeholder="0,00"></div></div><div class="cz-f" data-a="comercio" hidden><label class="cz-l" for="k_rec_comercio">Comércio</label><div class="cz-m"><span>R$</span><input id="k_rec_comercio" class="cz-in" inputmode="numeric" autocomplete="off" placeholder="0,00"></div></div><div class="cz-f" data-a="servicos" hidden><label class="cz-l" for="k_rec_servicos">Serviços</label><div class="cz-m"><span>R$</span><input id="k_rec_servicos" class="cz-in" inputmode="numeric" autocomplete="off" placeholder="0,00"></div></div></div>
+<p class="cz-tot" id="kTot"></p>
+</div></div>
+
+<div class="fq-item cz-num"><p class="fq-t"><i></i>Valores mensais</p><div class="cz-g"><div class="cz-f"><label class="cz-l" for="k_folha">Folha de salários, com pró-labore e encargos</label><div class="cz-m"><span>R$</span><input id="k_folha" class="cz-in" inputmode="numeric" autocomplete="off" placeholder="0,00"></div><label class="cz-na"><input type="checkbox" data-na="k_folha"><span>Não se aplica</span></label></div><div class="cz-f"><label class="cz-l" for="k_gasto">Gasto da operação, com rateio do shopping</label><div class="cz-m"><span>R$</span><input id="k_gasto" class="cz-in" inputmode="numeric" autocomplete="off" placeholder="0,00"></div></div><div class="cz-f"><label class="cz-l" for="k_emp">Parcelas de empréstimos e financiamentos</label><div class="cz-m"><span>R$</span><input id="k_emp" class="cz-in" inputmode="numeric" autocomplete="off" placeholder="0,00"></div><label class="cz-na"><input type="checkbox" data-na="k_emp"><span>Não se aplica</span></label></div></div></div>
+
+<div class="fq-item" role="radiogroup" aria-labelledby="t_kreg"><p class="fq-t" id="t_kreg"><i>02</i><span>Regime de tributação <b>PREVISTO</b> para 2027 <span class="cz-ast">*</span></span></p><div class="fq-ops"><label><input type="radio" name="kreg" value="puro"><span>Simples puro</span></label><label><input type="radio" name="kreg" value="hibrido"><span>Simples híbrido</span></label><label><input type="radio" name="kreg" value="presumido"><span>Lucro Presumido</span></label><label><input type="radio" name="kreg" value="real"><span>Lucro Real</span></label></div></div>
+
+<div class="fq-item" role="radiogroup" aria-labelledby="t_kcli"><p class="fq-t" id="t_kcli"><i>03</i>Perfil de cliente</p><div class="fq-ops"><label><input type="radio" name="kcli" value="b2b"><span>Empresas (B2B)</span></label><label><input type="radio" name="kcli" value="b2c"><span>Consumidor final (B2C)</span></label><label><input type="radio" name="kcli" value="ambos"><span>Ambos</span></label></div></div>
+
+<p class="f-erro" id="kErro" role="alert"></p>
+<div class="f-nav"><button type="submit" class="btn escuro">Ver a régua</button></div>
+</form>
+
+<div class="cz-res" id="kRes" hidden tabindex="-1">
+<p class="fl">Diagnóstico preliminar</p>
+<p class="bod cz-tit" id="kTit"></p>
+<div class="cz-reg" aria-hidden="true"><div class="cz-cel" id="kCel"></div><b class="cz-mk" id="kMk"></b></div>
+<div class="cz-zon"><span>Simples puro</span><span>Avaliar Simples híbrido</span><span>Lucro Presumido</span><span>Lucro Real</span></div>
+<button type="button" class="f-volta cz-rac-b" id="kRacB" aria-expanded="false" aria-controls="kRac">Ver raciocínio</button>
+<div class="cz-rac" id="kRac" hidden>
+<ul class="cz-sin" id="kSin"></ul>
+<p class="cz-nota">A régua indica direção, sem calcular imposto em reais. A alíquota da CBS para 2027 ainda depende de resolução do Senado. A comparação com Lucro Real e Presumido envolve IRPJ, CSLL, ICMS e ISS, que ficam fora desta conta.</p>
+</div>
+<a class="f-volta" href="mailto:contato@moreiraoliveira.adv.br?subject=Calculadora%20do%20lojista">Conversar com o escritório</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec papel" id="duvidas">
+<div class="g">
+<div class="c-esq rv">
+<span class="num">10 · Dúvidas</span>
+<h2 class="bod">Perguntas frequentes.</h2>
+</div>
+<div class="c-dir faq rv">
+<details><summary class="bod">Preciso consultar alguém para responder?</summary><p class="corpo">As perguntas foram pensadas para quem conhece a operação. Quando não souber uma resposta, marque "não sei".</p></details>
+<details><summary class="bod">Posso preencher mais de uma vez?</summary><p class="corpo">Pode. Cada envio gera uma nova nota.</p></details>
+<details><summary class="bod">Quem vê as minhas respostas?</summary><p class="corpo">Apenas a equipe técnica responsável pela elaboração da sua nota técnica preliminar.</p></details>
+</div>
+</div>
+</section>
+
+<!-- Fechamento -->
+<section class="fecha" id="fechamento">
+<div class="trama" aria-hidden="true"></div>
+<div class="g fecha-in">
+<h2 class="bod" id="fechaT">A transição começa em breve.<br>O mapeamento leva 3 minutos.</h2>
+<a class="btn claro" href="#formulario">Gerar a nota técnica do meu shopping</a>
+</div>
+<footer class="g rodape">
+<img src="img/Logo_Horizontal_Negativa_Papel.svg" alt="Moreira Oliveira Advocacia">
+<p>Material informativo, sem caráter de parecer jurídico.<br>contato@moreiraoliveira.adv.br</p>
+</footer>
+</section>
+
+
+<script src="vistoria-hero.js"></script>
+<script>
+(function(){var t=document.getElementById('topo');function f(){t.classList.toggle('solido',scrollY>window.innerHeight-90)}addEventListener('scroll',f,{passive:true});f()})();
+</script>
+<script>
+(function(){
+/* timecode do REC: tempo desde que a página abriu, em quadros de 30 fps */
+var tc=document.getElementById('tc'),t0=performance.now(),p2=function(n){return(n<10?'0':'')+n};
+if(tc&&!matchMedia('(prefers-reduced-motion: reduce)').matches){(function loop(){var ms=performance.now()-t0,sg=Math.floor(ms/1000);tc.textContent=p2(Math.floor(sg/3600))+':'+p2(Math.floor(sg/60)%60)+':'+p2(sg%60)+':'+p2(Math.floor(ms/33.34)%30);requestAnimationFrame(loop)})()}
+})();
+(function(){
+/* contagens reais (horário de Brasília) */
+function dias(iso){return Math.ceil((new Date(iso)-new Date())/864e5)}
+var d=dias('2026-12-01T00:00:00-03:00'),N=document.getElementById('prazoN'),T=document.getElementById('prazoT'),m=document.getElementById('m1t');
+m=m||{};N=N||{style:{}};T=T||{};if(d>1){N.textContent=d;m.textContent='Em '+d+' dias'}else if(d===1){N.textContent='1';T.textContent='dia para a NFS-e obrigatória';m.textContent='Amanhã'}else{N.textContent='Em vigor';N.style.fontSize='40px';T.textContent='NFS-e obrigatória desde 1º/12/2026';m.textContent='Em vigor'}
+var c=dias('2027-01-01T00:00:00-03:00'),F=document.getElementById('fechaT');
+if(c>1)F.innerHTML='A CBS começa em '+c+' dias.<br>O mapeamento leva 3 minutos.';else F.innerHTML='A transição já começou.<br>O mapeamento leva 3 minutos.';
+/* índice: toque marca a linha */
+document.querySelectorAll('.indice li').forEach(function(li){li.addEventListener('click',function(){var on=li.classList.contains('ativo');document.querySelectorAll('.indice li.ativo').forEach(function(x){x.classList.remove('ativo')});if(!on)li.classList.add('ativo')})});
+/* abas da nota */
+var abas=[].slice.call(document.querySelectorAll('.abas button')),pgs=document.querySelectorAll('.pg'),P=document.getElementById('fPag');
+function vai(i){abas.forEach(function(b,k){b.setAttribute('aria-selected',k===i?'true':'false');b.tabIndex=k===i?0:-1});pgs.forEach(function(p,k){p.classList.toggle('on',k===i)});P.textContent=(i+1)+'/4'}
+abas.forEach(function(b,k){b.addEventListener('click',function(){vai(k)});b.addEventListener('keydown',function(e){if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();vai((k+1)%4);abas[(k+1)%4].focus()}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();vai((k+3)%4);abas[(k+3)%4].focus()}})});
+vai(0);
+/* entrada ao rolar */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+})();
+</script>
+<script>
+/* ===== calendário ===== */
+(function(){
+var M=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'],S=['D','S','T','Q','Q','S','S'];
+var EV=[{k:'2026-12-01',d:new Date(2026,11,1),t:'NFS-e obrigatória',x:'Locações, cessões de espaço e cobranças condominiais.',r:'1º/12/2026'},
+        {k:'2027-01-01',d:new Date(2027,0,1),t:'Início da CBS',x:'Começa a CBS; acabam o PIS e a Cofins.',r:'1º/01/2027'}];
+var box=document.getElementById('calMeses'),det=document.getElementById('calDet');if(!box)return;
+var h=new Date();h=new Date(h.getFullYear(),h.getMonth(),h.getDate()).getTime();
+var A=EV[0].d.getTime(),B=EV[1].d.getTime();
+var meses=h>new Date(2027,1,1).getTime()?[0,1,2].map(function(i){var x=new Date(new Date(h).getFullYear(),new Date(h).getMonth()+i,1);return[x.getFullYear(),x.getMonth()]}):[[2026,10],[2026,11],[2027,0]];
+function iso(y,m,d){return y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0')}
+var html='',jan=[];
+meses.forEach(function(ym){var y=ym[0],m=ym[1],ini=new Date(y,m,1).getDay(),n=new Date(y,m+1,0).getDate();
+ html+='<div class="mes"><h4>'+M[m]+'<span>'+y+'</span></h4><div class="sem">'+S.map(function(x){return'<span>'+x+'</span>'}).join('')+'</div><div class="dias">';
+ for(var i=0;i<ini;i++)html+='<span class="vazio"></span>';
+ for(var d=1;d<=n;d++){var t=new Date(y,m,d).getTime(),k=iso(y,m,d),ev=EV.filter(function(e){return e.k===k})[0],c=[];
+  if(t===h)c.push('hoje');
+  if(t>h&&t<A)c.push('jan');
+  if(ev)html+='<button class="ev '+c.join(' ')+'" data-k="'+k+'" aria-pressed="false" aria-label="'+d+' de '+M[m]+': '+ev.t+'">'+d+'</button>';
+  else html+='<span class="'+c.join(' ')+'">'+d+'</span>';}
+ html+='</div></div>';});
+box.innerHTML=html;
+function mostra(k){var e=EV.filter(function(x){return x.k===k})[0];if(!e)return;
+ box.querySelectorAll('button.ev').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===k?'true':'false')});
+ var f=Math.round((e.d.getTime()-h)/864e5),q=f>1?'Faltam '+f+' dias':f===1?'Falta 1 dia':f===0?'É hoje':'Em vigor';
+ var nn=f>0?f:(f===0?'Hoje':'—'),lab=f>1?'dias para':f===1?'dia para':'';det.innerHTML='<span class="bod cnt">'+nn+'</span><div><b>'+(lab?lab+' ':'')+e.t+' · '+e.r+'</b><p>'+e.x+(f<0?' Em vigor.':'')+'</p></div>';}
+box.addEventListener('click',function(ev){var b=ev.target.closest('button.ev');if(b)mostra(b.dataset.k)});
+mostra(A>=h?EV[0].k:EV[1].k);
+/* animação: os dias que faltam se preenchem em sequência, uma vez */
+var cel=[].slice.call(box.querySelectorAll('.jan')),reduz=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduz){cel.forEach(function(c){c.classList.add('on')});return}
+var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();cel.forEach(function(c,i){setTimeout(function(){c.classList.add('on')},250+i*55)})}},{threshold:.35});
+io.observe(box);
+})();
+
+/* ===== diagrama do ecossistema: fluxos simultâneos, sobrecarga da administradora e pontos de atenção ===== */
+(function(){
+var eco=document.getElementById('eco');if(!eco)return;
+var palco=document.getElementById('ecoPalco'),svg=document.getElementById('ecoSvg'),leg=document.getElementById('ecoLeg'),NS='http://www.w3.org/2000/svg';
+/* i = índice na lista de fluxos; fios = linhas paralelas; info = vínculo de informação (pontilhado, sem lista); muda = ponto de atenção na reforma */
+var F=[{i:0,a:'loj',b:'adm',fios:3,muda:true},{i:1,a:'loj',b:'cond',muda:true},{i:2,a:'loj',b:'ass'},{i:3,a:'adm',b:'emp'},
+       {i:4,a:'adm',b:'loj',dep:true,trac:true},{i:-1,a:'cond',b:'adm',info:true},{i:-2,a:'ass',b:'adm',info:true}];
+var LEG={antes:'As relações do shopping hoje, todas acontecendo ao mesmo tempo.',depois:'As mesmas relações, cada uma com tratamento próprio na reforma, e um vínculo novo: o crédito do lojista do regime regular.'};
+var nos={};eco.querySelectorAll('.no').forEach(function(n){nos[n.dataset.n]=n});
+var reduz=matchMedia('(prefers-reduced-motion: reduce)').matches,vis=false,modo='antes',foco=null;
+function caixa(n){var r=n.getBoundingClientRect(),p=palco.getBoundingClientRect();return{w:r.width,h:r.height,cx:r.left-p.left+r.width/2,cy:r.top-p.top+r.height/2}}
+function caminho(f,o){var A=caixa(nos[f.a]),B=caixa(nos[f.b]),dx=B.cx-A.cx,dy=B.cy-A.cy,x1,y1,x2,y2;
+ var desl=f.dep?16:0;
+ if(Math.abs(dx)>Math.abs(dy)*0.9){var s=dx>0?1:-1;x1=A.cx+s*A.w/2;y1=A.cy+desl+o;x2=B.cx-s*B.w/2;y2=B.cy+desl;
+  var mx=(x1+x2)/2;if(Math.abs(y2-y1)<1)return'M'+x1+' '+y1+'H'+x2;return'M'+x1+' '+y1+'C'+mx+' '+y1+' '+mx+' '+y2+' '+x2+' '+y2}
+ var t=dy>0?1:-1,ox=f.info?(dx===0?0:0):0;x1=A.cx+(f.dep?-16:0)+o+(f.info?28:0)+(Math.abs(dx)>4?Math.sign(dx)*Math.min(A.w/2-14,Math.abs(dx)):0);y1=A.cy+t*A.h/2;x2=B.cx+(f.dep?-16:0)+(f.info?28:0);y2=B.cy-t*B.h/2;
+ var my=(y1+y2)/2;return'M'+x1+' '+y1+'C'+x1+' '+my+' '+x2+' '+my+' '+x2+' '+y2}
+function el(t,c){var e=document.createElementNS(NS,t);if(c)e.setAttribute('class',c);return e}
+var G=[],MARC=[];
+function monta(){svg.innerHTML='';G=[];MARC=[];
+ F.forEach(function(f){if(f.dep&&modo!=='depois')return;
+  var n=f.fios||1,g=el('g','g-f'+(f.info?' info':''));g.dataset.f=f.i;
+  for(var k=0;k<n;k++){var o=n>1?(k-(n-1)/2)*11:0,d=caminho(f,o),p=el('path','ln'+(f.trac?' trac':'')+(f.info?' inf':''));p.setAttribute('d',d);g.appendChild(p);
+   var L=p.getTotalLength(),gr=el('path','gr'+(f.trac?' trac':'')+(f.info?' inf':''));gr.setAttribute('d',d);gr.style.strokeDasharray=(L*(f.info?.18:.35)).toFixed(1)+' '+(L*1.4).toFixed(1);g.appendChild(gr);
+   if(reduz)gr.style.strokeDasharray='none';
+   G.push({f:f,p:p,L:L,gr:gr,g:g,k:k,ph:k*.29+(f.info?.5:0)+(f.i===3?.2:0),pu:null})}
+  svg.appendChild(g);
+  if(f.muda&&modo==='depois')g.classList.add('muda');
+ });aplicaFoco()}
+function liga(f,k){return foco&&(foco.f===f.i||(foco.n&&(f.a===foco.n||f.b===foco.n)))}
+function aplicaFoco(){eco.classList.toggle('foco',!!foco);
+ Object.keys(nos).forEach(function(k){nos[k].classList.toggle('on',!!foco&&(foco.n===k||F.some(function(f){return(!f.dep||modo==='depois')&&!f.info&&((foco.f===f.i&&(f.a===k||f.b===k))||(foco.n&&((f.a===foco.n&&f.b===k)||(f.b===foco.n&&f.a===k))))})))});
+ svg.querySelectorAll('.g-f').forEach(function(g){var f=F.filter(function(x){return String(x.i)===g.dataset.f})[0];g.classList.toggle('on',!!liga(f))});
+ eco.querySelectorAll('.eco-fluxos li').forEach(function(li){var f=F.filter(function(x){return x.i===+li.dataset.f})[0];li.classList.toggle('on',!!liga(f))})}
+/* sobrecarga: cada chegada faz a caixa pulsar com um contorno que se expande */
+function pulsa(n,forte){if(reduz||!n.animate)return;n.animate([{outline:'1px solid rgba(245,244,240,'+(forte?.9:.55)+')',outlineOffset:'0px'},{outline:'1px solid rgba(245,244,240,0)',outlineOffset:(forte?18:12)+'px'}],{duration:forte?1100:800,easing:'cubic-bezier(.2,.7,.3,1)'})}
+Object.keys(nos).forEach(function(k){var n=nos[k];
+ n.addEventListener('mouseenter',function(){foco={n:k};aplicaFoco()});n.addEventListener('mouseleave',function(){foco=null;aplicaFoco()});
+ n.addEventListener('focus',function(){foco={n:k};aplicaFoco()});n.addEventListener('blur',function(){foco=null;aplicaFoco()});
+ n.addEventListener('click',function(e){e.preventDefault();foco=(foco&&foco.n===k)?null:{n:k};aplicaFoco()})});
+eco.querySelectorAll('.eco-fluxos li').forEach(function(li){var i=+li.dataset.f;
+ li.addEventListener('mouseenter',function(){foco={f:i};aplicaFoco()});li.addEventListener('mouseleave',function(){foco=null;aplicaFoco()});
+ li.addEventListener('click',function(){foco=(foco&&foco.f===i)?null:{f:i};aplicaFoco()})});
+var tg=[].slice.call(eco.querySelectorAll('.eco-tog button'));
+tg.forEach(function(b){b.addEventListener('click',function(){modo=b.dataset.m;eco.dataset.modo=modo;tg.forEach(function(x){x.setAttribute('aria-checked',x===b?'true':'false')});leg.textContent=LEG[modo];foco=null;monta()})});
+new ResizeObserver(function(){monta()}).observe(palco);
+new IntersectionObserver(function(es){vis=es[0].isIntersecting}).observe(eco);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(monta);
+monta();
+if(reduz)return;
+(function loop(now){
+ if(vis){G.forEach(function(x){var vel=x.f.info?.00030:x.f.dep?.00030:.00038,u=((now*vel)+x.ph)%1,seg=x.L*(x.f.info?.18:.35);
+   x.gr.style.strokeDashoffset=(seg-u*(x.L+seg)).toFixed(1);x.gr.style.opacity=(u<.1?u/.1:u>.85?(1-u)/.15:1).toFixed(2);
+   if(x.pu!=null&&u<x.pu&&!(foco&&!liga(x.f))){if(x.f.b==='adm')pulsa(nos.adm,x.f.fios>1);else if(x.f.dep)pulsa(nos.loj,true)}
+   x.pu=u});
+  var bl=(Math.sin(now/420)+1)/2;MARC.forEach(function(c){c.style.opacity=(.45+.55*bl).toFixed(2)})}
+ requestAnimationFrame(loop)})(performance.now());
+})();
+</script>
+<script>
+/* ===== formulário (planilha "Mecanismo do Relatório Preliminar"): 3 blocos + contato, envio ao Supabase ===== */
+(function(){
+/* Preencha com os dados do projeto (Project Settings → API). Vazios = modo de teste, nada é enviado. */
+var SUPABASE_URL='https://wtsuhdlozrhvcrqvstwc.supabase.co',SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind0c3VoZGxvenJodmNycXZzdHdjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUwMTQ5NTAsImV4cCI6MjExMDU5MDk1MH0.X8izw29zg_7KGbyATs2ULA0kgsw2zZijKTa-zD7biIg',TABELA='respostas_nota_tecnica',BUCKET='audios-formulario';
+var f=document.getElementById('fNota');if(!f)return;
+var ps=[].slice.call(f.querySelectorAll('.fp')),T=ps.length,at=0,N=document.getElementById('fN'),Bar=document.getElementById('fBar'),E=document.getElementById('fErro'),
+ bv=document.getElementById('fVolta'),bs=document.getElementById('fSegue'),be=document.getElementById('fEnvia'),ok=document.getElementById('fOk');
+var CAMPOS=['p01','p02','p03','p04','p05','p06','p07','p10','p11','p12','b1','b2','b3','b4','b5','b6','b7','b8'];
+function p2(n){return(n<10?'0':'')+n}
+function topo(){var r=document.getElementById('formulario').getBoundingClientRect();if(r.top<0)scrollTo({top:scrollY+r.top-90,behavior:'smooth'})}
+function vai(i,rolar){at=i;ps.forEach(function(p,k){p.hidden=k!==i});N.textContent=p2(i+1)+' / '+p2(T);Bar.style.width=((i+1)/T*100)+'%';
+ bv.hidden=i===0;bs.hidden=i===T-1;be.hidden=i!==T-1;E.textContent='';if(rolar!==false)topo()}
+function faltando(i){return[].slice.call(ps[i].querySelectorAll('.fq-item')).filter(function(q){return!q.querySelector('input:checked')})}
+f.addEventListener('change',function(e){var q=e.target.closest('.fq-item');if(q)q.classList.remove('falta')});
+bs.addEventListener('click',function(){var fx=faltando(at);if(fx.length){fx.forEach(function(q){q.classList.add('falta')});E.textContent=(fx.length===1?'Falta 1 resposta':'Faltam '+fx.length+' respostas')+' neste bloco.';fx[0].scrollIntoView({behavior:'smooth',block:'center'});return}vai(at+1)});
+bv.addEventListener('click',function(){vai(at-1)});
+
+/* ---- áudio (C1) ---- */
+var rec=document.getElementById('fRec'),rt=document.getElementById('fRecT'),au=document.getElementById('fAud'),del=document.getElementById('fRecDel'),av=document.getElementById('fVozAv'),mr=null,partes=[],blob=null,t0=0,tick=null,MAX=180;
+function mmss(s){return p2(Math.floor(s/60))+':'+p2(Math.floor(s%60))}
+function para(){if(mr&&mr.state==='recording')mr.stop()}
+rec.addEventListener('click',function(){
+ if(mr&&mr.state==='recording'){para();return}
+ if(!navigator.mediaDevices||!window.MediaRecorder){av.hidden=false;return}
+ navigator.mediaDevices.getUserMedia({audio:true}).then(function(st){
+  partes=[];var tipo=MediaRecorder.isTypeSupported('audio/webm')?'audio/webm':(MediaRecorder.isTypeSupported('audio/mp4')?'audio/mp4':'');
+  mr=new MediaRecorder(st,tipo?{mimeType:tipo}:undefined);
+  mr.ondataavailable=function(e){if(e.data.size)partes.push(e.data)};
+  mr.onstop=function(){st.getTracks().forEach(function(t){t.stop()});clearInterval(tick);rec.setAttribute('aria-pressed','false');rec.querySelector('span').textContent='Gravar';
+   blob=new Blob(partes,{type:mr.mimeType||'audio/webm'});au.src=URL.createObjectURL(blob);au.hidden=false;del.hidden=false;rec.hidden=true};
+  mr.start();t0=Date.now();rec.setAttribute('aria-pressed','true');rec.querySelector('span').textContent='Parar';
+  tick=setInterval(function(){var s=(Date.now()-t0)/1000;rt.textContent=mmss(s);if(s>=MAX)para()},250);
+ }).catch(function(){av.hidden=false});
+});
+del.addEventListener('click',function(){blob=null;au.hidden=true;au.removeAttribute('src');del.hidden=true;rec.hidden=false;rt.textContent='00:00'});
+
+/* ---- envio ---- */
+document.getElementById('kRacB').addEventListener('click',function(){var o=this.getAttribute('aria-expanded')!=='true';this.setAttribute('aria-expanded',o);this.textContent=o?'Ocultar raciocínio':'Ver raciocínio';document.getElementById('kRac').hidden=!o});
+f.addEventListener('submit',function(e){e.preventDefault();
+ var nome=f.nome.value.trim(),email=f.email.value.trim(),shop=f.shopping.value.trim();
+ if(!nome||!shop||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){E.textContent='Preencha nome, e-mail válido e shopping.';return}
+ if(!f.consentimento.checked){E.textContent='Marque a autorização para continuar.';return}
+ var d={nome:nome,cargo:f.cargo.value.trim()||null,email:email,shopping:shop,consentimento:true,pagina:location.href.split('#')[0],c1_texto:f.c1.value.trim()||null,c1_audio:null};
+ CAMPOS.forEach(function(c){var x=f.querySelector('input[name="'+c+'"]:checked');d[c]=x?x.value:null});
+ be.disabled=true;be.textContent='Enviando…';
+ function fim(){f.hidden=true;ok.hidden=false;ok.focus();try{window.gtag&&gtag('event','generate_lead',{form:'nota_tecnica'});window.fbq&&fbq('track','Lead')}catch(_){}}
+ function erro(x){be.disabled=false;be.textContent='Gerar a nota técnica';var c=(x&&x.cod)?x.cod:'rede';if(location.protocol!=='file:'&&!/^https?:$/.test(location.protocol))c+=' · página aberta fora do navegador';console.error('Envio do formulário falhou:',x);E.textContent='Não foi possível enviar agora. Tente de novo em instantes. (código: '+c+')'}
+ if(!SUPABASE_URL||!SUPABASE_ANON_KEY){console.info('Formulário em modo de teste: nada foi enviado.',d,blob);fim();return}
+ var base=SUPABASE_URL.replace(/\/$/,''),H={'apikey':SUPABASE_ANON_KEY,'Authorization':'Bearer '+SUPABASE_ANON_KEY};
+ var sobe=Promise.resolve(null);
+ if(blob){var ext=/mp4/.test(blob.type)?'m4a':'webm',nomeArq=new Date().toISOString().slice(0,10)+'/'+(crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random().toString(36).slice(2))+'.'+ext;
+  sobe=fetch(base+'/storage/v1/object/'+BUCKET+'/'+nomeArq,{method:'POST',headers:Object.assign({'Content-Type':(blob.type||'audio/webm').split(';')[0]},H),body:blob}).then(function(r){if(!r.ok)return r.text().then(function(t){throw{cod:'audio '+r.status,msg:t}});return nomeArq},function(e){throw{cod:'rede no áudio',msg:String(e)}})}
+ sobe.then(function(arq){d.c1_audio=arq;return fetch(base+'/rest/v1/'+TABELA,{method:'POST',headers:Object.assign({'Content-Type':'application/json','Prefer':'return=minimal'},H),body:JSON.stringify(d)}).catch(function(e){throw{cod:'rede na tabela',msg:String(e)}})})
+  .then(function(r){if(!r.ok)return r.text().then(function(t){throw{cod:'tabela '+r.status,msg:t}});fim()}).catch(erro);
+});
+vai(0,false);
+})();
+</script>
+<script>
+/* calculadora do lojista: régua qualitativa, sem valores em reais.
+   Bases (BANCO DE INFORMAÇÕES): LC 123, art. 3º, II; art. 13-A; art. 18, §§ 5º-J e 5º-M; LC 214, art. 41, § 3º; art. 47, caput e § 9º; art. 194;
+   LC 123, art. 13, § 10 (redação da LC 227/2026). */
+(function(){
+var f=document.getElementById('fCalc');if(!f)return;
+var N=36,cel=document.getElementById('kCel'),mk=document.getElementById('kMk'),res=document.getElementById('kRes'),er=document.getElementById('kErro');
+for(var i=0;i<N;i++)cel.appendChild(document.createElement('i'));
+var serv=document.getElementById('k_serv'),bx=document.getElementById('kServ');
+var recs=document.getElementById('kRecs'),tot=document.getElementById('kTot');
+function atvs(){return[].slice.call(f.querySelectorAll('input[name=katv]:checked')).map(function(x){return x.value})}
+function recTot(){var a=atvs(),t=0;a.forEach(function(k){var n=num('k_rec_'+k);if(n>0)t+=n});tot.textContent=a.length>1&&t>0?'Total: '+brl(t):'';return t}
+f.addEventListener('change',function(e){if(e.target.name!=='katv')return;var a=atvs();bx.hidden=!serv.checked;recs.hidden=!a.length;[].forEach.call(recs.querySelectorAll('.cz-f'),function(d){d.hidden=a.indexOf(d.dataset.a)<0});recTot()});
+f.addEventListener('input',function(e){if(/^k_rec_/.test(e.target.id))recTot()});
+function num(id){var el=document.getElementById(id);if(el.disabled)return 0;var v=(el.value||'').replace(/\D/g,'');return v?parseInt(v,10)/100:NaN}
+function brl(n){return n.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0})}
+function pct(n){return(n*100).toLocaleString('pt-BR',{maximumFractionDigits:1})+'%'}
+[].forEach.call(f.querySelectorAll('.cz-in'),function(el){el.addEventListener('input',function(){var d=el.value.replace(/\D/g,'').replace(/^0+/,'').slice(0,14);el.value=d?(parseInt(d,10)/100).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}):'';el.closest('.cz-f').classList.remove('falta')})});
+[].forEach.call(f.querySelectorAll('[data-na]'),function(c){c.addEventListener('change',function(){var el=document.getElementById(c.dataset.na);el.disabled=c.checked;if(c.checked)el.value='';el.parentNode.classList.toggle('off',c.checked)})});
+function val(n){var x=f.querySelector('input[name='+n+']:checked');return x?x.value:null}
+f.addEventListener('change',function(e){var q=e.target.closest('.fq-item');if(q)q.classList.remove('falta')});
+f.addEventListener('submit',function(e){
+ e.preventDefault();er.textContent='';
+ var atv=atvs(),R=recTot(),F=num('k_folha'),G=num('k_gasto'),E=num('k_emp'),reg=val('kreg'),cli=val('kcli'),anx=val('kanx');
+ var falta=[];
+ var semRec=atv.filter(function(k){return!(num('k_rec_'+k)>=0)});if(semRec.length)falta.push('receita de '+semRec.map(function(k){return{industria:'indústria',comercio:'comércio',servicos:'serviços'}[k]}).join(' e '));else if(atv.length&&!(R>0))falta.push('receita');if(!(F>=0))falta.push('folha (ou marque não se aplica)');if(!(G>=0))falta.push('gasto da operação');
+ if(!reg){falta.push('regime');document.getElementById('t_kreg').parentNode.classList.add('falta')}
+ if(!atv.length){falta.push('atividade');document.getElementById('t_katv').parentNode.classList.add('falta')}
+ if(atv.indexOf('servicos')>-1&&!anx)falta.push('anexo dos serviços');
+ if(!cli){falta.push('perfil de cliente');document.getElementById('t_kcli').parentNode.classList.add('falta')}
+ if(falta.length){er.textContent='Falta preencher: '+falta.join(', ')+'.';return}
+ var sin=[],pos,tit;
+ if(R>4800000){
+  pos=.75;tit='Fora do Simples: Presumido ou Real';
+  sin.push(['→','A receita de '+brl(R)+' passa do teto do Simples, de R$ 4,8 milhões por ano.','LC 123, art. 3º, II']);
+  if(reg==='puro'||reg==='hibrido')sin.push(['!','Você marcou Simples para 2027. Com essa receita, a opção não se sustenta.','LC 123, art. 3º, II']);
+ }else{
+  var p=cli==='b2b'?1:cli==='ambos'?.5:0,r=Math.min(1,G*12/R),s=(p+r)/2;
+  pos=s*.375;
+  tit=pos<.15?'Tende ao Simples puro':pos<.25?'Entre o puro e o híbrido':'Avaliar o Simples híbrido';
+  sin.push([p>0?'→':'←',cli==='b2c'?'Clientes são consumidores finais. Quem compra para consumo não aproveita crédito, então o valor menor de CBS dentro do DAS não pesa contra a loja.':cli==='b2b'?'Clientes são empresas. Quem compra de loja no Simples puro só aproveita crédito no valor pago dentro do DAS; no híbrido, o crédito é o da apuração regular.':'Clientes empresas e consumidores. O crédito menor do Simples puro pesa só na parte das vendas para empresas.','LC 214, art. 47, § 9º, II']);
+  sin.push([r>=.3?'→':'←','O gasto da operação equivale a '+pct(r)+' da receita. No Simples puro a loja não toma crédito sobre essas compras; no híbrido, toma. Quanto maior essa parte, mais o híbrido se aproxima.','LC 214, art. 47, caput e § 9º, I']);
+  if(R>3600000)sin.push(['!','A receita está entre R$ 3,6 e 4,8 milhões. Acima de R$ 3,6 milhões, ICMS e ISS deixam de ser recolhidos no DAS.','LC 123, art. 13-A']);
+  if(reg==='real'||reg==='presumido')sin.push(['!','Você marcou Lucro '+(reg==='real'?'Real':'Presumido')+'. Com essa receita, o Simples é possível, e a régua mostra como os sinais se comportam dentro dele.','LC 123, art. 3º, II']);
+ }
+ if(R<=4800000&&atv.indexOf('servicos')>-1&&(anx==='V'||anx==='nao_sei'||anx==='III')){
+  var fr=F*12/R;
+  sin.push(['·','Fator R (folha de 12 meses sobre a receita): '+pct(fr)+'. Para as atividades do § 5º-I, de 28% para cima o serviço vai ao Anexo III; abaixo, ao Anexo V.','LC 123, art. 18, §§ 5º-J e 5º-M']);
+ }
+ if(E>0)sin.push(['·','Empréstimos de '+brl(E)+' por mês. Fora do Simples puro, parte dos juros pode gerar crédito, conforme cada contrato. Esse ponto fica fora da régua.','LC 214, art. 194']);
+ if(R>4800000)sin.push(['·','A escolha entre Presumido e Real depende da margem da loja e do IRPJ e da CSLL de cada regime, que esta régua não calcula.','Fica para a análise com o escritório']);
+ if(pos<.5)sin.push(['·','A escolha pelo híbrido vale por semestre e é feita em setembro e em março. A próxima janela é março de 2027, para o semestre iniciado em julho.','LC 123, art. 13, § 10 (redação da LC 227/2026)']);
+ document.getElementById('kTit').textContent=tit;
+ document.getElementById('kSin').innerHTML=sin.map(function(x){return'<li><b>'+x[0]+'</b><span>'+x[1]+'<small>'+x[2]+'</small></span></li>'}).join('');
+ res.hidden=false;var rb=document.getElementById('kRacB');rb.setAttribute('aria-expanded','false');rb.textContent='Ver raciocínio';document.getElementById('kRac').hidden=true;
+ var cs=cel.children;for(var j=0;j<N;j++){var c=(j+.5)/N,d=(c-pos)/.13;cs[j].style.opacity=(.06+.94*Math.exp(-d*d)).toFixed(3)}
+ mk.style.left='calc('+(pos*100).toFixed(2)+'% - 1px)';
+ res.focus({preventScroll:true});res.scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+})();
+</script>
+</body>
+</html>
