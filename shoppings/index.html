@@ -413,6 +413,15 @@ html{scroll-padding-top:88px}
 .fc label:nth-of-type(odd){grid-column:1}.fc label:nth-of-type(even){grid-column:2}
 .fc input:nth-of-type(odd){grid-column:1}.fc input:nth-of-type(even){grid-column:2}
 .fc{grid-auto-flow:dense}
+.fshop{margin-top:18px}.cb{position:relative}
+.cb-l{position:absolute;left:0;right:0;top:100%;z-index:20;max-height:300px;overflow:auto;list-style:none;background:#fff;border:1px solid var(--nevoa);box-shadow:0 12px 30px rgba(28,43,58,.12)}
+.cb-l li{padding:11px 14px;cursor:pointer;font:400 16px/1.35 'Source Serif 4',Georgia,serif;color:var(--marinho);border-bottom:1px solid #EEF0F1;text-align:left!important;hyphens:none}
+.cb-l li small{display:block;font:500 10px/1.4 Jost,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--paranoa);margin-top:3px}
+.cb-l li[aria-selected=true],.cb-l li:hover{background:var(--papel)}
+.cb-l li.cb-out{font-style:italic}
+.cb-l li.cb-vz{cursor:default;color:var(--paranoa);font-size:14px}
+#c_shopO{margin-top:12px}
+.cb-n{font:400 12px/1.5 Jost,sans-serif;color:#6B6F72;margin-top:10px;text-align:left!important;hyphens:none!important}
 .fns{display:flex;align-items:center;gap:12px;margin-top:20px;font:500 11px/1.4 Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--marinho);cursor:pointer}
 .fns input{appearance:none;-webkit-appearance:none;width:18px;height:18px;flex:none;border:1px solid var(--marinho);margin:0;display:grid;place-items:center;cursor:pointer}
 .fns input:checked{background:var(--marinho)}
@@ -839,7 +848,16 @@ p:not(.bod),li,dd,blockquote,figcaption,.corpo,.citacao,.linha,.sub,.lead,.abas 
 <label class="fl" for="c_nome">Nome</label><input id="c_nome" name="nome" autocomplete="name" required>
 <label class="fl" for="c_cargo">Cargo</label><input id="c_cargo" name="cargo" autocomplete="organization-title">
 <label class="fl" for="c_email">E-mail</label><input id="c_email" name="email" type="email" autocomplete="email" required>
-<label class="fl" for="c_shop">Shopping</label><input id="c_shop" name="shopping" autocomplete="organization" required>
+</div>
+<div class="fshop">
+<label class="fl" for="c_shop">Shopping</label>
+<div class="cb">
+<input id="c_shop" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="c_shopL" autocomplete="off" placeholder="Digite o nome ou a cidade e escolha na lista">
+<ul id="c_shopL" class="cb-l" role="listbox" hidden></ul>
+</div>
+<input id="c_shopO" type="text" autocomplete="organization" placeholder="Nome do shopping e cidade" aria-label="Nome do shopping e cidade" hidden>
+<input type="hidden" name="shopping">
+<p class="cb-n">Lista do Censo ABRASCE 2025/2026. Se o seu shopping não estiver nela, escolha “Outro” e digite o nome.</p>
 </div>
 <label class="fns fcons"><input type="checkbox" name="consentimento" required><span>Autorizo o uso destes dados para a elaboração da minha Nota Técnica Preliminar, conforme a <a href="https://www.moreiraoliveira.adv.br/privacidade/" target="_blank" rel="noopener">Política de Privacidade</a>.</span></label>
 </fieldset>
@@ -1099,11 +1117,47 @@ rec.addEventListener('click',function(){
 });
 del.addEventListener('click',function(){blob=null;au.hidden=true;au.removeAttribute('src');del.hidden=true;rec.hidden=false;rt.textContent='00:00'});
 
+/* ---- shopping: lista do Censo ABRASCE + Outro ---- */
+(function(){
+ var inp=document.getElementById('c_shop'),ul=document.getElementById('c_shopL'),outro=document.getElementById('c_shopO'),val=f.shopping,L=null,itens=[],at=-1;
+ function sa(t){return (t||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
+ function carrega(){if(L)return;L=[];fetch('censo-shoppings.json').then(function(r){return r.json()}).then(function(j){L=j.map(function(x){return {n:x[0],c:x[1],u:x[2],k:sa(x[0]+' '+x[1]+' '+x[2])}});if(document.activeElement===inp)mostra()}).catch(function(){L=[]})}
+ function fecha(){ul.hidden=true;inp.setAttribute('aria-expanded','false');at=-1}
+ function marca(i){itens.forEach(function(li,j){li.setAttribute('aria-selected',j===i?'true':'false')});at=i;if(itens[i])itens[i].scrollIntoView({block:'nearest'})}
+ function escolhe(o){
+  if(o==='outro'){inp.value='Outro (não está na lista)';outro.hidden=false;val.value=outro.value.trim();fecha();outro.focus();return}
+  inp.value=o.n+' — '+o.c+'/'+o.u;val.value=inp.value;outro.hidden=true;outro.value='';fecha();
+ }
+ function mostra(){
+  var q=sa(inp.value).trim().split(/\s+/).filter(Boolean),r=[];
+  if(L&&L.length){for(var i=0;i<L.length&&r.length<60;i++){if(q.every(function(w){return L[i].k.indexOf(w)>=0}))r.push(L[i])}}
+  ul.innerHTML='';itens=[];
+  if(L&&!L.length&&!q.length){}
+  if(!r.length&&q.length){var v=document.createElement('li');v.className='cb-vz';v.textContent='Nenhum shopping do Censo com esse nome.';ul.appendChild(v)}
+  r.forEach(function(o){var li=document.createElement('li');li.setAttribute('role','option');li.textContent=o.n;var s=document.createElement('small');s.textContent=o.c+' · '+o.u;li.appendChild(s);li.addEventListener('mousedown',function(e){e.preventDefault();escolhe(o)});ul.appendChild(li);itens.push(li)});
+  var ou=document.createElement('li');ou.className='cb-out';ou.setAttribute('role','option');ou.textContent='Outro: meu shopping não está na lista';ou.addEventListener('mousedown',function(e){e.preventDefault();escolhe('outro')});ul.appendChild(ou);itens.push(ou);
+  itens.forEach(function(li,j){li.id='c_shopI'+j;li._o=j<r.length?r[j]:'outro'});
+  ul.hidden=false;inp.setAttribute('aria-expanded','true');at=-1;
+ }
+ inp.addEventListener('focus',function(){carrega();mostra()});
+ inp.addEventListener('input',function(){val.value='';outro.hidden=true;mostra()});
+ inp.addEventListener('blur',function(){setTimeout(fecha,120)});
+ inp.addEventListener('keydown',function(e){
+  if(ul.hidden&&(e.key==='ArrowDown')){mostra();return}
+  if(e.key==='ArrowDown'){e.preventDefault();marca(Math.min(at+1,itens.length-1))}
+  else if(e.key==='ArrowUp'){e.preventDefault();marca(Math.max(at-1,0))}
+  else if(e.key==='Enter'){if(!ul.hidden){e.preventDefault();if(itens[at])escolhe(itens[at]._o);else if(itens.length===2)escolhe(itens[0]._o)}}
+  else if(e.key==='Escape'){fecha()}
+ });
+ outro.addEventListener('input',function(){val.value=outro.value.trim()});
+})();
+
 /* ---- envio ---- */
 document.getElementById('kRacB').addEventListener('click',function(){var o=this.getAttribute('aria-expanded')!=='true';this.setAttribute('aria-expanded',o);this.textContent=o?'Ocultar raciocínio':'Ver raciocínio';document.getElementById('kRac').hidden=!o});
 f.addEventListener('submit',function(e){e.preventDefault();
  var nome=f.nome.value.trim(),email=f.email.value.trim(),shop=f.shopping.value.trim();
- if(!nome||!shop||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){E.textContent='Preencha nome, e-mail válido e shopping.';return}
+ if(!nome||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){E.textContent='Preencha nome e e-mail válido.';return}
+ if(!shop){E.textContent=document.getElementById('c_shopO').hidden?'Escolha o shopping na lista ou a opção “Outro”.':'Digite o nome do shopping.';return}
  if(!f.consentimento.checked){E.textContent='Marque a autorização para continuar.';return}
  var d={id:novoId(),nome:nome,cargo:f.cargo.value.trim()||null,email:email,shopping:shop,consentimento:true,pagina:location.href.split('#')[0],c1_texto:f.c1.value.trim()||null,c1_audio:null};
  CAMPOS.forEach(function(c){var x=f.querySelector('input[name="'+c+'"]:checked');d[c]=x?x.value:null});
