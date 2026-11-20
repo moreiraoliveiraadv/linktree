@@ -551,12 +551,13 @@ p:not(.bod),li,dd,blockquote,figcaption,.corpo,.citacao,.linha,.sub,.lead,.abas 
 @media(max-width:900px){.rodape img{height:38px}}
 
 /* abertura no celular: a cena ocupa a primeira tela (título, datas e controles); o painel vem logo abaixo */
-@media(max-width:900px){
+@media(max-width:1199px){
  .hero{height:auto!important;min-height:0!important}
  .hero .vh-stage{bottom:auto!important;height:100svh!important}
  .hero .vh-poster{height:100svh!important;bottom:auto!important}
  .hero .vh-bottom{bottom:auto!important;top:calc(100svh - 118px)}
- .b{display:flex;flex-direction:column;justify-content:flex-start;height:auto!important;padding:max(calc(var(--vh-top) + 64px),calc(100svh - 340px)) 24px 56px!important}
+ .b{display:flex;flex-direction:column;justify-content:flex-start;height:auto!important;padding:max(calc(var(--vh-top) + 64px),calc(100svh - 340px)) clamp(24px,6vw,92px) 56px!important}
+ .b-dir{max-width:620px}
  .b-grade{display:contents}
  .b h1{order:1;margin-bottom:0}
  .datas{order:2;margin:22px 0 150px!important}
@@ -566,6 +567,9 @@ p:not(.bod),li,dd,blockquote,figcaption,.corpo,.citacao,.linha,.sub,.lead,.abas 
 .f-aviso-voz{display:block;font:400 12px/1.5 Jost,sans-serif;color:var(--paranoa);margin:4px 0 10px}
 #fOkPdf{margin-top:22px;display:inline-block}
 #fOkPdf[hidden]{display:none}
+
+/* abertura em telas médias e grandes: o conteúdo nunca sobe por baixo do cabeçalho */
+.osd b{white-space:nowrap}
 </style>
 </head>
 <body>
@@ -936,7 +940,7 @@ p:not(.bod),li,dd,blockquote,figcaption,.corpo,.citacao,.linha,.sub,.lead,.abas 
 
 <script src="vistoria-hero.js"></script>
 <script>
-(function(){var t=document.getElementById('topo');function f(){t.classList.toggle('solido',scrollY>window.innerHeight-90)}addEventListener('scroll',f,{passive:true});f()})();
+(function(){var t=document.getElementById('topo');function f(){t.classList.toggle('solido',scrollY>8)}addEventListener('scroll',f,{passive:true});f()})();
 </script>
 <script>
 (function(){
