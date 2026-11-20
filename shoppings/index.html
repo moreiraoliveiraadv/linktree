@@ -6,6 +6,7 @@
 <title>Vitrine tributária para shopping centers · Moreira Oliveira Advocacia</title>
 <meta name="description" content="O que o seu shopping precisa olhar antes de 2027: Nota Técnica Preliminar sobre a reforma tributária e calculadora do lojista.">
 <meta name="robots" content="noindex">
+<link rel="preload" as="image" href="img/capa.jpg">
 <link rel="canonical" href="https://www.moreiraoliveira.adv.br/shoppings/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
@@ -54,6 +55,10 @@ body{background:var(--papel);color:var(--marinho);font:400 17px/1.65 'Source Ser
 
 /* primeira dobra: cena viva por trás */
 .hero{height:100vh;height:100svh;min-height:720px;color:var(--papel);--vh-top:104px}
+/* antes do 3D carregar: a foto da capa, já escurecida, com o texto por cima */
+.hero:not(.vh-root){position:relative;background:var(--marinho) url(img/capa.jpg) center/cover no-repeat}
+.hero:not(.vh-root)::before{content:'';position:absolute;inset:0;background:rgba(28,43,58,.45)}
+.hero:not(.vh-root)>.b{position:relative;z-index:1;height:100%}
 .hero .vh-stage::after{background:rgba(28,43,58,.32)!important}
 /* plaquinha e cantos acima do véu: Papel sólido, texto Marinho nítido */
 .hero .vh-stage::after{z-index:1}
@@ -230,6 +235,7 @@ html{scroll-padding-top:88px}
 .rodape{border-top:1px solid var(--paranoa);padding-top:28px!important;padding-bottom:40px!important;display:flex!important;justify-content:space-between;align-items:center;gap:24px}
 .rodape img{height:46px}
 .rodape p{font:400 12px/1.6 Jost,sans-serif;color:var(--nevoa);text-align:right}
+.rodape a{color:var(--nevoa);text-decoration:none;border-bottom:1px solid rgba(213,218,221,.35)}.rodape a:hover{color:var(--papel);border-color:var(--papel)}
 
 /* entrada ao rolar */
 .rv{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
@@ -553,6 +559,8 @@ html{scroll-padding-top:88px}
 @media(max-width:560px){.topo .btn{white-space:nowrap}}
 /* todos os textos justificados (manual da marca) */
 p:not(.bod),li,dd,blockquote,figcaption,.corpo,.citacao,.linha,.sub,.lead,.abas button span{text-align:justify!important;hyphens:auto;-webkit-hyphens:auto}
+/* celular: coluna estreita abre buracos no justificado; alinhado à esquerda */
+@media(max-width:600px){p:not(.bod),li,dd,blockquote,figcaption,.corpo,.citacao,.linha,.sub,.lead,.abas button span{text-align:left!important;hyphens:manual!important;-webkit-hyphens:manual!important}}
 .bod,h1,h2,h3,summary,.fq-t,.cz-tit{hyphens:manual;-webkit-hyphens:manual}
 
 /* revisão mobile */
@@ -962,12 +970,16 @@ p:not(.bod),li,dd,blockquote,figcaption,.corpo,.citacao,.linha,.sub,.lead,.abas 
 </div>
 <footer class="g rodape">
 <img src="img/Logo_Horizontal_Negativa_Papel.svg" alt="Moreira Oliveira Advocacia">
-<p>Material informativo, sem caráter de parecer jurídico.<br>contato@moreiraoliveira.adv.br</p>
+<p>Material informativo, sem caráter de parecer jurídico.<br><a href="mailto:contato@moreiraoliveira.adv.br">contato@moreiraoliveira.adv.br</a><br><a href="https://wa.me/5561995776667" target="_blank" rel="noopener">WhatsApp +55 61 99577-6667</a></p>
 </footer>
 </section>
 
 
-<script src="vistoria-hero.js"></script>
+<script>
+/* 3D do hero depois da primeira pintura: a capa aparece já, o 3D (≈800 KB) vem em seguida */
+(function(){function c(){var s=document.createElement('script');s.src='vistoria-hero.js';document.body.appendChild(s)}
+if(document.readyState==='complete')setTimeout(c,0);else addEventListener('load',function(){setTimeout(c,0)})})();
+</script>
 <script>
 (function(){var t=document.getElementById('topo');function f(){t.classList.toggle('solido',scrollY>8)}addEventListener('scroll',f,{passive:true});f()})();
 </script>
