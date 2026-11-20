@@ -976,6 +976,12 @@ p:not(.bod),li,dd,blockquote,figcaption,.corpo,.citacao,.linha,.sub,.lead,.abas 
 
 
 <script>
+/* telas até 1199px: o painel "Veja o que..." começa sempre abaixo da foto, em qualquer altura de janela */
+(function(){var hero=document.getElementById('hero'),bd=hero&&hero.querySelector('.b-dir');if(!bd)return;
+function ajusta(){bd.style.marginTop='';if(innerWidth>=1200)return;var st=hero.querySelector('.vh-stage');if(!st)return;
+ var falta=st.getBoundingClientRect().bottom-bd.getBoundingClientRect().top+48;if(falta>0)bd.style.marginTop=falta+'px'}
+addEventListener('resize',ajusta);new MutationObserver(ajusta).observe(hero,{attributes:true,attributeFilter:['class'],childList:true});
+if(window.visualViewport)visualViewport.addEventListener('resize',ajusta);ajusta()})();
 /* 3D do hero depois da primeira pintura: a capa aparece já, o 3D (≈800 KB) vem em seguida */
 (function(){function c(){var s=document.createElement('script');s.src='vistoria-hero.js';document.body.appendChild(s)}
 if(document.readyState==='complete')setTimeout(c,0);else addEventListener('load',function(){setTimeout(c,0)})})();
