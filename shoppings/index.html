@@ -1146,6 +1146,11 @@ rec.addEventListener('click',function(){
 });
 del.addEventListener('click',function(){blob=null;au.hidden=true;au.removeAttribute('src');del.hidden=true;rec.hidden=false;rt.textContent='00:00'});
 
+/* ---- acorda o servidor da nota quando a pessoa chega ao formulário (plano gratuito dorme após 15 min) ---- */
+(function(){var feito=false;function acorda(){if(feito)return;feito=true;fetch('https://nota-shopping.onrender.com/saude').catch(function(){})}
+var fs=document.getElementById('formulario');if(fs&&'IntersectionObserver' in window){new IntersectionObserver(function(es){if(es[0].isIntersecting)acorda()},{rootMargin:'800px 0px'}).observe(fs)}
+f.addEventListener('focusin',acorda)})();
+
 /* ---- shopping: lista do Censo ABRASCE + Outro ---- */
 (function(){
  var inp=document.getElementById('c_shop'),ul=document.getElementById('c_shopL'),outro=document.getElementById('c_shopO'),val=f.shopping,L=null,itens=[],at=-1;
