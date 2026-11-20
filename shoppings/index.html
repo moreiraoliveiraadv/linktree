@@ -1105,7 +1105,7 @@ f.addEventListener('submit',function(e){e.preventDefault();
  CAMPOS.forEach(function(c){var x=f.querySelector('input[name="'+c+'"]:checked');d[c]=x?x.value:null});
  be.disabled=true;be.textContent='Enviando…';
  /* servidor da nota (motor). Vazio enquanto não estiver no ar: a página mostra a mensagem de e-mail. */
- var API_NOTA='';
+ var API_NOTA='https://nota-shopping.onrender.com';
  function novoId(){if(window.crypto&&crypto.randomUUID)return crypto.randomUUID();return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){var r=Math.random()*16|0;return(c==='x'?r:(r&3|8)).toString(16)})}
  var MSG_EMAIL='Sua nota será enviada por e-mail.',MSG_ERRO='Não foi possível gerar agora. Nossa equipe enviará por e-mail.';
  function okMsg(t){document.getElementById('fOkMsg').textContent=t}
