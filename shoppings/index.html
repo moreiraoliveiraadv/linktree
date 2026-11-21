@@ -891,7 +891,7 @@ p:not(.bod),li,dd,blockquote,figcaption,.corpo,.citacao,.linha,.sub,.lead,.abas 
 <div class="f-ok" id="fOk" hidden tabindex="-1">
 <span class="num">Recebido</span>
 <p class="bod">Suas respostas foram enviadas.</p>
-<p class="corpo" id="fOkMsg" aria-live="polite">Gerando a sua Nota Técnica Preliminar.</p>
+<p class="corpo" id="fOkMsg" aria-live="polite">Gerando a sua Nota Técnica Preliminar. Isso leva até um minuto; o botão para baixar aparece aqui.</p>
 <a class="btn escuro" id="fOkPdf" href="#" target="_blank" rel="noopener" hidden>Baixar a nota em PDF</a>
 </div>
 </div>
@@ -1208,6 +1208,7 @@ f.addEventListener('submit',function(e){e.preventDefault();
    if(st&&st.status==='enviada'&&st.url){okMsg('A sua nota está pronta. Uma cópia foi enviada para o e-mail informado.');var b=document.getElementById('fOkPdf');b.href=st.url;b.hidden=false;return}
    if(st&&(st.status==='sombra'||st.status==='revisao')){okMsg(MSG_EMAIL);return}
    if(st&&st.status==='erro'){okMsg(MSG_ERRO);return}
+   if(st&&st.status==='ignorada'){okMsg('Resposta de teste: nenhuma nota foi gerada.');return}
    setTimeout(function(){acompanhar(id,n+1)},3000);
   }).catch(function(){setTimeout(function(){acompanhar(id,n+1)},3000)});
  }
